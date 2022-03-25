@@ -178,7 +178,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Federico Troanes - [LinkedIn](https://www.linkedin.com/in/federico-nahuel-troanes-7572001b2/) - [GitHub](https://github.com/FefeTroanes?tab=repositories) - ftroane@gmail.com
+Federico Troanes - [LinkedIn](https://www.linkedin.com/in/federico-nahuel-troanes-7572001b2/) - [GitHub](https://github.com/FefeTroanes?tab=repositories) - ftroanes@gmail.com
 
 Project Link: [https://github.com/FefeTroanes/BaSP-M2022-Etapa-1](https://github.com/FefeTroanes/BaSP-M2022-Etapa-1)
 
