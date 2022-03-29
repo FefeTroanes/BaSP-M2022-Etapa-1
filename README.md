@@ -135,7 +135,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] HTML structure
+- [x] HTML
 - [ ] CSS
 - [ ] JS
 <!--
