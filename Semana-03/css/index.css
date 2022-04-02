@@ -19,27 +19,77 @@ h1 {
 }
 #rr-logo {
     position: absolute;
+    padding: 0;
     width: 74px;
     height: 98px;
     right: 57px;
     top: 16px;
+    margin: 0;
 }
 header a img {
     border: 1px solid #373867;
     box-sizing: border-box;
-    border-radius: 5px;
+    margin-top: 16px;
+    margin-right: 57px;
 }
+
 main header{
+    /*
     border: 1px #373867 solid;
+    width: 1848px;
+    height: 120px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    box-sizing: border-box;*/
+    border: 1px #373867 solid;
+    margin-left: 488px;  
+    padding: 1px 16px;
+    position: fixed;
+    width: 1848px;
+    height: 120px;
+    /*  margin-left: 200px;
+        padding: 1px 16px;
+        height: 1000px;  */
 }
 main aside{
+    /*
     border: 1px #373867 solid;
+    width: 488px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    box-sizing: border-box;
+*/  border: 1px #373867 solid;
+    margin: 0;
+    padding: 0;
+    width: 488px;
+    background-color: #dcdada;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
     /* background-color: #dcdada; */
     /* position: fixed;
     width: 488px;
     height: 1358px;
     left: 0px;
     top: 0px; */
+}
+body {
+    margin: 0;
+}
+section{
+    /*
+    width: 1848px;
+    margin-top: 0px;
+    margin-right: 0px;
+    position: relative;
+    */
+    border: 1px #373867 solid;
+    margin-left: 488px;  
+    padding: 1px 16px;
+    width: 1848px;
 }
 h2 {
     font-style: normal;
