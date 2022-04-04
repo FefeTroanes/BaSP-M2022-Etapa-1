@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Trackgenix  es la única herramienta de control horario de empleados que
         necesitarás para entender tu negocio. Características. Todas las funcionalidades del control ...">
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/index.css">
         <title>Trackgenix</title>
     </head>
@@ -21,84 +22,92 @@
             </header>
             <!-- Esto es la barra lateral con el home, sign up, log in y la informacion de contacto -->
             <aside>
-                <form>
-                    <input type="search" placeholder="search">
-                </form>
-                <span>Menu</span>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#">Get in touch</a></li>
-                    <li>
-                        <p>
-                            Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim
-                            lorem ullamcorper dolore.
-                            Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
-                        </p>
-                    </li>
-                    <li>
-                        <img src="assets/envelope.svg" alt="Envelope">
-                        <a href="mailto:information@untitled.tld"><u>information@untitled.tld</u></a>
-                    </li>
-                    <li>
-                        <img src="assets/home.svg" alt="Home" width="40">
-                        <address>1234 Somewhere Road #8254 Nashville, TN 00000-0000</address>
-                    </li>
-                </ul>
+                <div id="search-container">
+                    <form id="search">
+                        <input type="search" placeholder="search">
+                    </form>
+                </div>
+                <div id="menu">
+                    <span>Menu</span>
+                    <ul class="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Log in</a></li>
+                        <li><a href="#">Get in touch</a></li>
+                        <li>
+                            <p>
+                                Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim
+                                lorem ullamcorper dolore.
+                                Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+                            </p>
+                        </li>
+                        <li>
+                            <img id="envelope-icon" src="assets/envelope.svg" alt="Envelope">
+                            <a href="mailto:information@untitled.tld">information@untitled.tld</a>
+                        </li>
+                        <li>
+                            <img id="home-icon" src="assets/home.svg" alt="Home" width="40">
+                            <address>1234 Somewhere Road #8254 Nashville, TN 00000-0000</address>
+                        </li>
+                    </ul>
+                </div>
             </aside>
         </main>
         <!-- Esta es la seccion principal de la pagina con el nombre de la empresa y la presentacion de su aplicacion -->
-        <section>
-            <h2>Trackgenix SA</h2>
-            <!-- DIVISION -->
-            <h3 id="unique-title">Trackgenix app</h3>
-            <p>
-                Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
-                Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-                adipiscing accumsan eu faucibus. Integerac pellentesque praesent tincidunt felis sagittis eget. tempus
-                euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in 
-                faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus.
-                Integer ac pellentesque praesent.
-            </p>
-            <!--                                 ACA VA EL ICONO DEL RELOJ                                        -->
-            <img src="assets/time.svg" alt="Clock">
+        <section id="section1">
+            <h2 id="trackgenix-sa">Trackgenix SA</h2>
+        </section>
+        <section >
+            <div id="app-paragraph">
+                <h3 id="unique-title">Trackgenix app</h3>
+                <p>
+                    Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
+                    Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
+                    adipiscing accumsan eu faucibus. Integerac pellentesque praesent tincidunt felis sagittis eget. tempus
+                    euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in 
+                    faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus.
+                    Integer ac pellentesque praesent.
+                </p>
+            </div>
+            <div id="time">
+                <img src="assets/time.svg" alt="Clock">
+            </div>
             <!-- DIVISION -->
         </section>
         <!-- Esta es la seccion de funcionalidades  -->
         <section>
             <h2>Functionalities</h2>
-            <article>Hours log</article>
-            <article>Reports</article>
-            <article>Resource management</article>
-            <article>Multiple roles</article>
+            <article class="functionality">Hours log</article>
+            <article class="functionality">Reports</article>
+            <article class="functionality">Resource management</article>
+            <article class="functionality">Multiple roles</article>
             <!-- DIVISION --> 
         </section>
         <!-- Esta seccion que describe por que deberia usar esta aplicacion -->
         <section>
             <h2>Why use Trackgenix?</h2>
-            <article>
+            <article class="why-use">
                 <h4>Productivity booster</h4>
                 <p>
                     Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
                     ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
                 </p>
             </article>
-            <article>
+            <article class="why-use">
                 <h4>Leadership and team management</h4>
                 <p>
                     Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis 
                     ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
                 </p>
             </article>
-            <article>
+            <article class="why-use">
                 <h4>Work traceability</h4>
                 <p>
                     Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
                     ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
                 </p>
             </article>
-            <article>
+            <article class="why-use">
                 <h4>Decision making</h4>
                 <p>
                     Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
@@ -111,7 +120,7 @@
         <section>
             <h2>Form</h2>
             <form method="post">
-                <section>
+                <div>
                     <input type="text" name="name" id="name" placeholder="Name">
                     <input type="email" name="email" id="email" placeholder="Email">
                     <div class="contact-area">
@@ -129,13 +138,13 @@
                             <label for="commercialization">Commercialization</label>
                         </div>
                     </div>
-                </section>
-                <section>
+                </div>
+                <div>
                     <label for="commentary" id="message">Message</label>
                     <textarea name="Message" id="Message" cols="30" rows="10" placeholder="Message"></textarea>
                     <input type="submit" name="submit" value="Send">
                     <button>Return</button>
-                </section>
+                </div>
             </form>
             <!-- DIVISION -->
         </section>
