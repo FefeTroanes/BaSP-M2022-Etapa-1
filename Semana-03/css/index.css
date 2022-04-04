@@ -97,7 +97,14 @@ aside div ul li p {
     width: 50px;
     height: 46px;
 }
+/*
 section{
+    margin-left: 562px;  
+    padding: 1px 16px;
+    width:  1569px;
+    border-bottom: 5px solid #AACE9B;
+}*/
+.main-section {
     margin-left: 562px;  
     padding: 1px 16px;
     width:  1569px;
@@ -113,7 +120,7 @@ h2 {
 }
 #trackgenix-sa{
     width: 100%;
-   margin-top: 331px;
+    margin-top: 331px;
  /*   display: block;*/
 }
 #unique-title {
@@ -181,5 +188,9 @@ address {
 .functionality {
     display: inline-block;
     width: 49%;
-
+}
+.footer1 {
+    display: inline-block;
+    width: 15%;
+    text-align: left;
 }
