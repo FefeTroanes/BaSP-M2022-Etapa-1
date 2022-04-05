@@ -41,13 +41,13 @@
                                 Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
                             </p>
                         </li>
-                        <li>
+                        <li  class="adress">
                             <img id="envelope-icon" src="assets/envelope.svg" alt="Envelope">
-                            <a href="mailto:information@untitled.tld">information@untitled.tld</a>
+                            <a href="mailto:information@untitled.tld" class="adress">information@untitled.tld</a>
                         </li>
                         <li>
                             <img id="home-icon" src="assets/home.svg" alt="Home" width="40">
-                            <address>1234 Somewhere Road #8254 Nashville, TN 00000-0000</address>
+                            <address class="adress">1234 Somewhere Road #8254 Nashville, TN 00000-0000</address>
                         </li>
                     </ul>
                 </div>
@@ -77,39 +77,39 @@
         <!-- Esta es la seccion de funcionalidades  -->
         <section class="main-section">
             <h2>Functionalities</h2>
-            <article class="functionality">Hours log</article>
-            <article class="functionality">Reports</article>
-            <article class="functionality">Resource management</article>
-            <article class="functionality">Multiple roles</article>
+            <article class="functionality"><span class="item">o</span> Hours log</article>
+            <article class="functionality"><span class="item">o</span>Reports</article>
+            <article class="functionality"><span class="item">o</span>Resource management</article>
+            <article class="functionality"><span class="item">o</span>Multiple roles</article>
             <!-- DIVISION --> 
         </section>
         <!-- Esta seccion que describe por que deberia usar esta aplicacion -->
         <section class="main-section">
-            <h2>Why use Trackgenix?</h2>
+            <h2 id="why-use-title">Why use Trackgenix?</h2>
             <article class="why-use">
                 <h4>Productivity booster</h4>
-                <p>
+                <p class="why-use-p">
                     Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
                     ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
                 </p>
             </article>
             <article class="why-use">
                 <h4>Leadership and team management</h4>
-                <p>
+                <p class="why-use-p">
                     Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis 
                     ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
                 </p>
             </article>
             <article class="why-use">
                 <h4>Work traceability</h4>
-                <p>
+                <p class="why-use-p">
                     Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
                     ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
                 </p>
             </article>
             <article class="why-use">
                 <h4>Decision making</h4>
-                <p>
+                <p class="why-use-p">
                     Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
                     ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
                 </p>
@@ -120,9 +120,9 @@
         <section class="main-section">
             <h2>Form</h2>
             <form method="post">
-                <section class="why-use">
-                    <input type="text" name="name" id="name" placeholder="Name">
-                    <input type="email" name="email" id="email" placeholder="Email">
+                <section class="form-section">
+                    <p class="form-input"><input type="text" name="name" id="name" placeholder="Name"></p>
+                    <p class="form-input"><input type="email" name="email" id="email" placeholder="Email"></p>
                     <div class="contact-area">
                         <p class="contact-area">Contact area</p>
                         <div>
@@ -139,11 +139,13 @@
                         </div>
                     </div>
                 </section>
-                <section  class="why-use">
-                    <label for="commentary" id="message">Message</label>
+                <section  class="form-section">
+                    <p><label for="commentary" id="message">Message</label></p>
                     <textarea name="Message" id="Message" cols="30" rows="10" placeholder="Message"></textarea>
-                    <input type="submit" name="submit" value="Send">
-                    <button>Return</button>
+                    <p>
+                        <input type="submit" name="submit" value="Send">
+                        <button>Return</button>
+                    </p>
                 </section>
             </form>
             <!-- DIVISION -->
@@ -151,25 +153,23 @@
         <!-- Esta es la seccion de historia de la empresa -->
         <section class="main-section">
             <h2>History</h2>
-            <section class="why-use">
-                <img src="assets/image1.svg" alt="Refill-image-1">
-                <p>
+            <section class="history">
+                <img class="refill-image" src="assets/image1.svg" alt="Refill-image-1">
+                <p class="history-text">
                     Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
                     Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
                     ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
                     tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod.
                 </p>
-                
             </section>
-            <section class="why-use">
-                
-                <p>
+            <section class="history"> 
+                <p class="history-text">
                     Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
                     Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
                     ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
                     tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod.
                 </p>
-                <img src="assets/image2.svg" alt="Refill-image-2">
+                <img class="refill-image" src="assets/image2.svg" alt="Refill-image-2">
             </section>
             <!-- DIVISION -->
         </section>
