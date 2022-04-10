@@ -90,7 +90,6 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -130,6 +129,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [x] HTML  (2nd week)
 - [x] CSS   (3th week)
+- [x] CSS Flexbox (4th week)
 - [ ] JS
 <!--
     - [ ] Nested Feature
@@ -182,8 +182,16 @@ Project Link: [https://github.com/FefeTroanes/BaSP-M2022-Etapa-1](https://github
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* HTML
-* CSS
+* [Radium Rocket](https://radiumrocket.com/)
+* [EDteam](https://www.youtube.com/channel/UCP15FVAA2UL-QOcGhy7-ezA)
+* [AJ&Smart](https://www.youtube.com/channel/UCeB_OpLspKJGiKv1CYkWFFw)
+* [DesignCourse](https://www.youtube.com/channel/UCVyRiMvfUNMA1UPlDPzG5Ow)
+* [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
+* [freeCodeCamp](https://www.freecodecamp.org/)
+* [W3Schools](https://www.w3schools.com/)
+* [MDN Web Docs](https://developer.mozilla.org/)
+* [Jonathan MirCha](https://jonmircha.com/)
+* <em>And last but not least, I wanna thank me.</em>
 
 <!--
 * []()
