@@ -127,9 +127,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] HTML  (2nd week)
-- [x] CSS   (3th week)
-- [x] CSS Flexbox (4th week)
+- [x] [HTML](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-02/)  (2nd week)
+- [x] [CSS](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-03/)   (3th week)
+- [x] [CSS Flexbox](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-04/) (4th week)
 - [ ] JS
 <!--
     - [ ] Nested Feature

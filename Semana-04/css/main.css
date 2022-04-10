@@ -4,23 +4,9 @@
     margin-top: 150px;
 }
 
-
-
-
-
 #description-text {
     padding-top: 45px;
 }
-
-
-
-
-
-
-
-
-
-
 
 .history {
     display: inline-block;
@@ -50,12 +36,19 @@ main {
     justify-content: space-between;
 }
 
+img#burger-menu-icon {
+    align-self: flex-start;
+    margin-top: 10px;
+
+}
+
 .main-section {
     display: flex;
     flex-direction: column;
     margin: 0 30px;
     border-bottom: 5px solid #AACE9B;
     align-items: center;
+
 }
 
 h2 {
@@ -111,7 +104,7 @@ h2#why-use-title {
 article.why-use  {
     display: flex;
     flex-direction: column;
-    margin-top: 26px;
+    margin: 20px 0;
 }
 
 .why-use p {
@@ -138,6 +131,10 @@ input {
     height: 38px;
     border: 1px solid #373867;
     border-radius: 5px;
+}
+
+input[type="text"], input[type="email"] {
+    padding-left: 12px;
 }
 
 input[type=checkbox] {
@@ -181,4 +178,15 @@ section.form-section button, section.form-section input[type="submit"] {
     height: 40px;
     align-content: center;
     margin: 15px;
+}
+
+section.history {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 90%;
+}
+
+section.history img {
+    margin: 30px;
 }
