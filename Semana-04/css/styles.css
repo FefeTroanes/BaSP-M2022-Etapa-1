@@ -77,7 +77,11 @@ h4 {
         margin-left: 42px;
     }
 
+    h4 {
+        font-size: 22px;
+    }
+
     p {
-        font-size: 20px;
+        font-size: 17px;
     }
 }
