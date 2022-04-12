@@ -255,6 +255,19 @@ h4 {
 }
 
 @media(min-width: 1024px) {
+
+    a:link {
+        color: #000;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #000;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
     body {
         flex-direction: row;
         background-color: #dcdada;
@@ -295,6 +308,21 @@ h4 {
         /*position: fixed;*/
     }
 
+    ul.menu span {
+        text-decoration: underline;
+        text-decoration-color: #AACE9B;
+        font-size: 36px;
+    }
+
+    div#menu ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ul.menu li {
+        margin-top: 14px;
+    }
+
     aside ul li a {
         display: block;
         font-size: 25px;
@@ -318,12 +346,23 @@ h4 {
     }
 
     #menu {
-        /*padding-top: 41px;*/
+        padding-top: 41px;
         padding-left: 25px;
         padding-right: 48px;
         display: flex;
         flex-direction: column;
 
+    }
+
+    div#get-in-touch {
+        margin-top: 41px;
+        font-size: 25px;
+
+    }
+
+    div#get-in-touch a {
+        text-decoration: underline;
+        text-decoration-color: #AACE9B;
     }
 
     #search-container {
@@ -334,23 +373,10 @@ h4 {
         align-items: center;
     }
 
-    .menu li:first-child, .menu li:nth-child(2), .menu li:nth-child(3) {
-        margin-top: 15px;
-    }
+    /* Se que esta mal pero si les pongo clase por alguna razon no me lo toma
+       Lo queres revisar? Seria en las lineas 40 y 44 del html*/
 
-    .menu li:nth-child(4) {
-        margin-top: 41px;
-    }
-
-    .menu li:nth-child(5) {
-        margin-top: 20px;
-    }
-
-    .menu li:nth-child(6) {
-        font-size: 10px;
-    }
-
-    #envelope-icon {
+    #address-icon {
         width: 28px;
         height: 46px;
     }
