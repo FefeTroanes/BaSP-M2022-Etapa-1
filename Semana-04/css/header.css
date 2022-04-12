@@ -45,13 +45,3 @@ header {
 #rr-logo {
     height: 70px;
 }
-
-@media(min-width: 768px){
-    header {
-        justify-content: space-between;
-    }
-
-    #rr-logo {
-        margin-right: 42px;
-    }
-}

@@ -54,26 +54,3 @@ div#footer-final-text p:nth-child(2){
     margin: 10px;
 
 }
-
-@media(min-width: 768px){
-    footer section.main-section {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    footer {
-        width: 100%;
-    }
-
-    .footer-link a {
-        font-size: 18px;
-    }
-
-    div#footer-pages-box {
-        display: block;
-    }
-
-    footer section.main-section:nth-child(2) {
-        flex-direction: column;
-    }
-}
