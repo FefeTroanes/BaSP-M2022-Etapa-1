@@ -130,7 +130,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] [HTML](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-02/)  (2nd week)
 - [x] [CSS](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-03/)   (3th week)
 - [x] [CSS Responsive Design](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-04/) (4th week)
-- [ ] JS
+- [x] [JS Exercises](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-05/) (5th week)
 <!--
     - [ ] Nested Feature
 -->
