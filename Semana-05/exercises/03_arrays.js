@@ -35,7 +35,7 @@ console.log('-Exercise 3.e:');
 months.reverse();
 console.log(months);
 
-// f.  Unir todos los elementos del array en un único string donde cada mes este separado por un guión - (utilizar join).
+// f.  Unir todos los elementos del array en un único string donde cada mes este separado por un guión - (utilizar join)
 
 console.log('-Exercise 3.f:');
 var monthsJoined = months.join('-');
@@ -46,5 +46,5 @@ console.log(monthsJoined);
 console.log('-Exercise 3.g:');
 var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre',
     'Noviembre', 'Diciembre'];
-var monthsCopyWtihSlice = months.slice(4, 11);
-console.log(monthsCopyWtihSlice);
+var monthsCopyWithSlice = months.slice(4, 11);
+console.log(monthsCopyWithSlice);
