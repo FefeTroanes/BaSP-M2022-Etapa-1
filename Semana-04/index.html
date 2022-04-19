@@ -16,12 +16,10 @@
     <body>
         <div class="sidebar-container">
             <aside>
-                <div id="search-container">
-                    <form>
-                        <input type="search" placeholder="search">
-                    </form>
-                </div>
-                <div id="menu">
+                <form id="search-container">
+                    <input type="search" placeholder="search">
+                </form>
+                <div id="menu-container">
                     <ul class="menu">
                         <span>Menu</span>
                         <li><a href="index.html">Home</a></li>
@@ -52,8 +50,10 @@
                 <header>
                     <h1>Trackgenix</h1>
                     <a href="https://radiumrocket.com/">
-                        <img id="rr-logo" src="https://radiumrocket.com/static/rocket-logo-883f208f5b6a41d21540cfecae22fa07.png"
-                        alt="Radium Rocket logo">
+                        <img id="rr-logo"
+                             src="https://radiumrocket.com/static/rocket-logo-883f208f5b6a41d21540cfecae22fa07.png"
+                             alt="Radium Rocket logo"
+                        >
                     </a>
                 </header>
             </main>
@@ -64,13 +64,13 @@
             <section class="main-section">
                 <div id="app-paragraph">
                     <h3 id="app-title">Trackgenix app</h3>
-                    <p id="description-text">
-                        Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
-                        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-                        ac adipiscing accumsan eu faucibus. Integerac pellentesque praesent tincidunt felis sagittis eget.
-                        tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum
-                        primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
-                        accumsan eu faucibus. Integer ac pellentesque praesent.
+                    <p>
+                        Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
+                        euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
+                        iaculis volutpat ac adipiscing accumsan eu faucibus. Integerac pellentesque praesent tincidunt
+                        felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod.
+                        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
+                        volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
                     </p>
                 </div>
                 <div id="time-image-container">
@@ -127,8 +127,8 @@
                 <h2>Form</h2>
                 <form class="form-container" method="post">
                     <section class="form-section">
-                        <p class="form-input"><input type="text" name="name" id="name" placeholder="Name"></p>
-                        <p class="form-input"><input type="email" name="email" id="email" placeholder="Email"></p>
+                        <input class="form-input" type="text" name="name" id="name" placeholder="Name">
+                        <input class="form-input" type="email" name="email" id="email" placeholder="Email">
                         <div class="contact-area">
                             <p class="contact-area">Contact area</p>
                             <div>
@@ -159,26 +159,26 @@
                 <h2>History</h2>
                 <section class="history">
                     <p class="history-text">
-                        Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
-                        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-                        ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-                        tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod.
+                        Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
+                        euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
+                        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt
+                        felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod.
                     </p>
                     <img class="refill-image" src="./assets/image1.svg" alt="Refill-image-1">
                 </section>
                 <section class="history">
                     <p class="history-text">
-                        Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
-                        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-                        ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-                        tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod.
+                        Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
+                        euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
+                        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt
+                        felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod.
                     </p>
                     <img class="refill-image" src="./assets/image2.svg" alt="Refill-image-2">
                 </section>
             </section>
-            <footer class="footer">
+            <footer>
                 <section class="main-section">
-                    <section class="footer1">
+                    <section class="footer-list">
                         <h4>Products</h4>
                         <ol >
                             <li class="footer-link"><a href="#">Functionalities</a></li>
@@ -187,7 +187,7 @@
                             <li class="footer-link"><a href="#">Extras</a></li>
                         </ol>
                     </section>
-                    <section class="footer1">
+                    <section class="footer-list">
                         <h4>Company</h4>
                         <ol>
                             <li class="footer-link"><a href="#">About us</a></li>
@@ -196,10 +196,10 @@
                             <li class="footer-link"><a href="#">Blog</a></li>
                         </ol>
                     </section>
-                    <section class="footer1">
+                    <section class="footer-list">
                         <h4>Support</h4>
                         <ol>
-                            <li class="footer-link"><a href="#" class="footer-link">Help</a></li>
+                            <li class="footer-link"><a href="#">Help</a></li>
                             <li class="footer-link"><a href="#">Tutorials</a></li>
                             <li class="footer-link"><a href="#">API</a></li>
                             <li class="footer-link"><a href="#">Contact</a></li>
@@ -209,19 +209,20 @@
                 <section class="main-section">
                     <div id="footer-pages-box">
                         <a href="https://www.instagram.com/">
-                            <img src="./assets/instagram.svg" alt="Instagram" width="62" height="62">
+                            <img class="footer-image" src="./assets/instagram.svg" alt="Instagram" width="62"
+                                 height="62">
                         </a>
                         <a href="https://twitter.com/">
-                            <img src="./assets/twitter.svg" alt="Twitter" width=" 62" height="62">
+                            <img class="footer-image" src="./assets/twitter.svg" alt="Twitter" width=" 62" height="62">
                         </a>
                         <a href="https://www.facebook.com/">
-                            <img src="./assets/facebook.svg" alt="Facebook" height="62">
+                            <img class="footer-image" src="./assets/facebook.svg" alt="Facebook" height="62">
                         </a>
                         <a href="https://www.linkedin.com/">
-                            <img src="./assets/linkedin.svg" alt="LinkedIn" width="62" height="62">
+                            <img class="footer-image" src="./assets/linkedin.svg" alt="LinkedIn" width="62" height="62">
                         </a>
                         <a href="https://github.com/">
-                            <img src="./assets/github.svg" alt="GitHub" width="62" height="62">
+                            <img class="footer-image" src="./assets/github.svg" alt="GitHub" width="62" height="62">
                         </a>
                     </div>
                     <div>

@@ -1,17 +1,18 @@
 p {
-    color: #958888;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Roboto Slab, Oxygen, Ubuntu, Cantarell,
     'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 24px;
+    color: #958888;
 }
 
 h1 {
     font-weight: 700;
     font-size: 40px;
     line-height: 47px;
+    font-family: -apple-system, BlinkMaSystemFont, 'Segoe UI', Roboto, Roboto Slab, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
     color: #373867;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Roboto Slab, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;}
+}
 
 h2 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Roboto Slab, Oxygen, Ubuntu, Cantarell,
@@ -43,9 +44,17 @@ h4 {
         align-items: flex-start;
     }
 
+    header {
+        justify-content: space-between;
+    }
+
+    footer {
+        width: 100%;
+    }
+
     .main-section {
-        width: 90%;
         align-items: flex-start;
+        width: 90%;
     }
 
     section.main-section:nth-child(3) {
@@ -54,13 +63,13 @@ h4 {
     }
 
     #app-title {
-        font-size: 37px;
         align-self: flex-start;
+        font-size: 37px;
     }
 
     div#app-paragraph {
-        width: 50%;
         justify-items: center;
+        width: 50%;
         padding: 20px 0;
     }
 
@@ -101,8 +110,8 @@ h4 {
 
     section.history {
         flex-direction: row-reverse;
-        width: 100%;
         align-items: center;
+        width: 100%;
     }
 
     section.history p {
@@ -116,11 +125,6 @@ h4 {
 
     section.history:nth-child(2) {
         flex-direction: row;
-
-    }
-
-    header {
-        justify-content: space-between;
     }
 
     #rr-logo {
@@ -130,10 +134,6 @@ h4 {
     footer section.main-section {
         flex-direction: row;
         justify-content: space-around;
-    }
-
-    footer {
-        width: 100%;
     }
 
     .footer-link a {
@@ -152,15 +152,15 @@ h4 {
 @media(min-width: 1024px) {
 
     a:link {
-        color: #000;
         background-color: transparent;
         text-decoration: none;
+        color: #000;
     }
 
     a:visited {
-        color: #000;
         background-color: transparent;
         text-decoration: none;
+        color: #000;
     }
 
     body {
@@ -168,24 +168,31 @@ h4 {
         background-color: #dcdada;
     }
 
+    aside {
+        display: flex;
+    }
+
+    main {
+        display: block;
+        position: fixed;
+        width: 80%;
+        background: #fff;
+    }
+
+    input[type=search] {
+        background-color: #ebebeb;
+    }
+
     div.sidebar-container {
+        position: fixed;
         width: 20%;
         height: 100%;
-        position: fixed;
     }
 
     div.main-container {
         width: 80%;
-        background: #fff;
         margin-left: 20%;
-    }
-
-    aside {
-        display: flex;
-        flex-direction: column;
-        background-color: #dcdada;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Roboto Slab, Oxygen, Ubuntu, Cantarell,
-        'Open Sans', 'Helvetica Neue', sans-serif;
+        background: #fff;
     }
 
     section.main-section img#burger-menu-icon {
@@ -194,13 +201,6 @@ h4 {
 
     section.main-section:nth-child(2) {
         margin-top: 100px;
-    }
-
-    aside {
-        /*width: 300px;*/
-        height: 100%;
-        background-color: #dcdada;
-        /*position: fixed;*/
     }
 
     ul.menu span {
@@ -218,41 +218,17 @@ h4 {
         margin-top: 14px;
     }
 
-    aside ul li a {
-        display: block;
-        font-size: 25px;
-        border-bottom: solid 2px #AACE9B;
-    }
-
-    aside div ul li p {
-        width: 100%;
-        font-size: 15px;
-    }
-
-    main {
-        display: block;
-        width: 80%;
-        position: fixed;
-        background: #fff;
-    }
-
-    input[type=search] {
-        background-color: #ebebeb;
-    }
-
-    #menu {
+    #menu-container {
+        display: flex;
+        flex-direction: column;
         padding-top: 41px;
         padding-left: 25px;
         padding-right: 48px;
-        display: flex;
-        flex-direction: column;
-
     }
 
     div#get-in-touch {
         margin-top: 41px;
         font-size: 25px;
-
     }
 
     div#get-in-touch a {
@@ -261,11 +237,11 @@ h4 {
     }
 
     #search-container {
-        height: 100px;
-        background-color: #ebebeb;
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100px;
+        background-color: #ebebeb;
     }
 
     /* Se que esta mal pero si les pongo class en vez de id por alguna razon no me lo toma

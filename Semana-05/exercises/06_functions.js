@@ -6,10 +6,10 @@ console.log('--EXERCISE 6: FUNCTIONS');
 console.log('-Exercise 6.a:');
 
 var result;
-var firstNumber = parseInt(prompt('Type a number'));
-var secondNumber = parseInt(prompt('Type another number'));
+var firstNumber = prompt('Type a number');
+var secondNumber = prompt('Type another number');
 function sum (number1 , number2) {
-    result = firstNumber + secondNumber;
+    result = number1 + number2;
     return console.log('El resultado es: ' + result);
 }
 sum(firstNumber,secondNumber);

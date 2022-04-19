@@ -23,8 +23,8 @@ alert('2)b. ' + string_2a);
 console.log('-Exercise 2.c:');
 
 var string3 = 'federico troanes';
-var string_2c = string3.substring(string3.length - 3, string3.length);
-alert('2)c. ' + string_2c);
+var string2c = string3.substring(string3.length - 3, string3.length);
+alert('2)c. ' + string2c);
 
 //d.Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con la primera letra en
 //  mayúscula y las demás en minúscula. Guardar el resultado en una nueva variable
@@ -33,8 +33,8 @@ alert('2)c. ' + string_2c);
 console.log('-Exercise 2.d:');
 
 var string4 = 'federico troanes';
-var string_2d = string4[0].toUpperCase() + string4.substring(1).toLowerCase();
-alert('2)d. ' + string_2d);
+var string2d = string4[0].toUpperCase() + string4.substring(1).toLowerCase();
+alert('2)d. ' + string2d);
 
 //e.Crear una variable de tipo string con al menos 10 caracteres y algún espacio en blanco. Encontrar la posición del
 //  primer espacio en blanco y guardarla en una variable (utilizar indexOf).
