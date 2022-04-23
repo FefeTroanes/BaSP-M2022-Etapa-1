@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="../styles/sidebar.css">
         <link rel="stylesheet" href="../styles/footer.css">
         <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="stylesheet" href="../styles/login.css">
+        <link rel="stylesheet" href="../styles/sign-up.css">
         <title>Trackgenix</title>
     </head>
     <body>
@@ -45,7 +47,7 @@
                 </div>
             </aside>
         </div>
-        <div class="main-container">
+        <div class="login-and-signup-main-container">
             <main class="container">
                 <header>
                     <h1>Trackgenix</h1>
@@ -57,19 +59,22 @@
                     </a>
                 </header>
             </main>
-            <section style="background-color: white; margin-top: 200px">
-                <form id="sign-up-form">
-                    <h2>Sign up</h2>
-                    <input>
-                    <input>
-                    <input>
-                    <input>
-                    <input>
-                    <input>
-                    <input>
-                    <input>
-                    <input>
-                    <input>
+            <section class="signup-container">
+                <h2 class="login-signup-title">Sign Up</h2>
+                <form class="form-section">
+                    <input type="text" class="signup-input" placeholder="Name" id="name">
+                    <input type="text" class="signup-input" placeholder="Lastname" id="lastname">
+                    <input type="text" class="signup-input" placeholder="DNI" id="dni">
+                    <input type="text" class="signup-input" placeholder="Birth date" id="birthDate">
+                    <input type="text" class="signup-input" placeholder="Telephone" id="telephone">
+                    <input type="text" class="signup-input" placeholder="Adress" id="adress">
+                    <input type="text" class="signup-input" placeholder="City" id="city">
+                    <input type="text" class="signup-input" placeholder="Postal Code" id="postalCode">
+                    <input type="text" class="signup-input" placeholder="Email" id="email">
+                    <input type="password" class="signup-input" placeholder="Password" id="password1">
+                    <input type="password" class="signup-input" placeholder="Repeat password" id="password2">
+                    <button class="continue-button" value="Continue">Continue</button>
+                    <p class="box-bottom-text">Already have an account? <a id="signup-now" href="./login.html">Log in now</a></p>
                 </form>
             </section>
         </div>
