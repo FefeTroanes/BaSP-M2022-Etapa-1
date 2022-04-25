@@ -73,6 +73,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 * HTML
 * CSS
+* JS
 <!--
 * [Next.js](https://nextjs.org/)
 * [React.js](https://reactjs.org/)
@@ -131,6 +132,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] [CSS](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-03/)   (3th week)
 - [x] [CSS Responsive Design](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-04/) (4th week)
 - [x] [JS Exercises](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-05/) (5th week)
+- [x] [JS DOM: Login and Signup pages added with their JS logic](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-06/views/)
 <!--
     - [ ] Nested Feature
 -->
