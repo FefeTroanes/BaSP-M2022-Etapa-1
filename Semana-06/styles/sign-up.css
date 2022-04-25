@@ -41,3 +41,10 @@ input.signup-input-error {
     border: 1.05px solid #ff3300;
     padding-left: 8px;
     margin-top: 10px;
+}
+
+@media(min-width: 1024px){
+    section.signup-container{
+        margin-top: 130px;
+    }
+}
