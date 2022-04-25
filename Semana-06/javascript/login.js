@@ -1,10 +1,12 @@
 var email = document.getElementById('email');
 var password = document.getElementById('password');
 var emailFlag = false;
+var passwordFlag = false;
 var passwordNumberFlag = 0;
 var passwordLetterFlag = 0;
 var numbers="0123456789";
 var minusLetters="abcdefghyjklmnñopqrstuvwxyz";
+var form = document.getElementById('loginForm');
 // var passwordValue = document.getElementById('email').value;
 email.addEventListener('focus', emailClear);
 email.addEventListener('blur', emailValidation);
@@ -19,52 +21,83 @@ function emailValidation(e) {
         return emailFlag = false;
     }
 }
-
+// Email clear
 function emailClear(e){
     if (emailFlag == false) {
         e.target.value = "";
     }
 }
 
+//Form submit event
+form.addEventListener('submit', showInputs);
+
+
+
+//Mostrar inputs
+function showInputs(e){
+    e.preventDefault();
+}
+
 password.addEventListener('blur', passwordValidation);
 password.addEventListener('focus', passwordClear);
 //
+
 function passwordValidation(e){
     var passwordValue = e.target.value;
-    console.log('passwordValue: ' + passwordValue);
-
-    //letter validation
-    for (var i = 0; i < passwordValue.length; i++){
-        if (isNaN(passwordValue[i]) == true){
-            console.log('tiene letras');
-        } else {
-            console.log('no tiene letras');
-            passwordLetterFlag += 1;
-        }
-    }
-    //number validation
-    for (var i = 0; i < passwordValue.length; i++){
-        if (isNaN(passwordValue[i]) != true){
+    var hasNumbers = false;
+    var hasLetters = false;
+    var notANumberOrLetter = true;
+    var numbers = '1234567890';
+    var letters = 'abcdefghyjklmnñopqrstuvwxyz'
+    var numerosyletras='abcdefghyjklmnñopqrstuvwxyz0123456789';
+    for(i=0; i<passwordValue.length; i++){
+        if (numbers.indexOf(passwordValue.charAt(i),0)!=-1){
             console.log('tiene numeros');
+            hasNumbers = true;
         } else {
             console.log('no tiene numeros');
-            passwordNumberFlag += 1;
         }
     }
-    if (passwordNumberFlag != 0 || passwordLetterFlag != 0 || passwordValue.length == 0) {
-        console.log('Contrasenia invalida');
-    } else {
-        console.log('contasenia valida');
+    console.log('hasnumbers ' + hasNumbers);
+    for(i=0; i<passwordValue.length; i++){
+        if (letters.indexOf(passwordValue.charAt(i),0)!=-1){
+            console.log('tiene letras');
+            hasLetters = true;
+        } else {
+            console.log('no tiene numeros');
+        }
     }
-    console.log('passwordletterflag: ' + passwordLetterFlag);
-    console.log('passwordnumberflag: ' + passwordNumberFlag);
+    console.log('hasletters ' + hasLetters);
+    // for(i=0; i<passwordValue.length; i++){
+    //     if (letters.indexOf(passwordValue.charAt(i),0)!=-1){
+    //         console.log('tiene letras');
+    //         hasLetters = true;
+    //     } else {
+    //         console.log('no tiene numeros');
+    //     }
+    // }
+    for(i=0; i<passwordValue.length; i++){
+        if (numerosyletras.indexOf(passwordValue.charAt(i),0)==-1){
+            console.log('tiene signos');
+            notANumberOrLetter = false;
+        } else {
+            console.log('no tiene signos');
+        }
+    }
+    console.log('letras y signos ' + notANumberOrLetter);
+    if (hasNumbers == true && hasLetters == true && notANumberOrLetter == true){
+        passwordFlag = true;
+        console.log('password valida');
+    } else {
+        console.log('password invalida');
+    }
 }
 
 function passwordClear(e){
     var passwordValue = e.target.value;
-    if (passwordNumberFlag != 0 || passwordValue.length == 0){
-        passwordValue = "";
-        passwordNumberFlag = 0;
+    if (passwordFlag != true){
+        e.target.value = "";
+        // passwordNumberFlag = 0;
     }
 }
 //     var passwordArray = passwordValue.toLowerCase().split('');

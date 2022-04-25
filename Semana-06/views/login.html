@@ -60,14 +60,15 @@
             </main>
             <section class="login-container">
                 <h2 class="login-signup-title">Log in</h2>
-                <form class="form-section" name="form-section">
+                <form id="loginForm" class="form-section" name="form-section">
                     <input type="text" class="login-input" placeholder="Email" id="email" name="email">
                     <input type="password" class="login-input" placeholder="Password" id="password">
                     <div id="remember-me-container">
                         <input type="checkbox" id="remember-me" name="remember-me">
                         <label for="remember-me">Remember me</label>
                     </div>
-                    <button class="continue-button" value="Continue">Continue</button>
+                    <input type="submit" class="continue-button" value="Continue">
+<!--                    <button class="continue-button" value="Continue">Continue</button>-->
                     <p class="box-bottom-text" id="forgot-password"><a href="#">Forgot password?</a></p>
                     <p class="box-bottom-text">Don't have an account? <a id="signup-now" href="sign-up.html">Sign up now</a></p>
                 </form>
