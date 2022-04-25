@@ -61,9 +61,15 @@
             <section class="login-container">
                 <h2 class="login-signup-title">Log in</h2>
                 <form id="loginForm" class="form-section" name="form-section">
-                    <input type="text" class="login-input" placeholder="Email" id="email" name="email">
-                    <p></p>
-                    <input type="password" class="login-input" placeholder="Password" id="password">
+                    <div class="input-container">
+                        <input type="text" class="login-input" placeholder="Email" id="email" name="email">
+                        <p id="email-output" class="message-hidden">Valid email</p>
+                    </div>
+                   <div class="input-container">
+                       <input type="password" class="login-input" placeholder="Password" id="password">
+                       <p id="password-output" class="message-hidden">Valid password</p>
+                   </div>
+
                     <div id="remember-me-container">
                         <input type="checkbox" id="remember-me" name="remember-me">
                         <label for="remember-me">Remember me</label>

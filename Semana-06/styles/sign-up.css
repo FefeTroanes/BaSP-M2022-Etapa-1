@@ -22,3 +22,22 @@ input.signup-input {
     background: rgba(55, 56, 103, 0);
     margin-bottom: 15px;
 }
+
+input.signup-input-ok {
+    border: 1.05px solid #009933;
+    width: 100%;
+    padding: 0;
+    background: rgba(55, 56, 103, 0);
+    border-radius: 5px;
+    padding-left: 8px;
+    margin-top: 10px;
+}
+
+input.signup-input-error {
+    width: 100%;
+    padding: 0;
+    background: rgba(55, 56, 103, 0);
+    border-radius: 5px;
+    border: 1.05px solid #ff3300;
+    padding-left: 8px;
+    margin-top: 10px;

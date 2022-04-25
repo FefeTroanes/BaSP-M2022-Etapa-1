@@ -1,15 +1,26 @@
 //HTML Objects
 var littleName = document.getElementById('name');
+var littleNameOutput = document.getElementById('name-output')
 var lastname = document.getElementById('lastname');
+var lastnameOutput = document.getElementById('lastname-output')
 var dni = document.getElementById('dni');
+var dniOutput = document.getElementById('dni-output');
 var birthDate = document.getElementById('birthDate');
+var birthDateOutput = document.getElementById('birthDate-output');
 var telephone = document.getElementById('telephone');
+var telephoneOutput = document.getElementById('telephone-output');
 var address = document.getElementById('address');
+var addressOutput = document.getElementById('address-output');
 var city = document.getElementById('city');
+var cityOutput = document.getElementById('city-output');
 var postalCode = document.getElementById('postalCode');
+var postalCodeOutput = document.getElementById('postalCode-output');
 var email = document.getElementById('email');
+var emailOutput = document.getElementById('email-output');
 var password1 = document.getElementById('password1');
+var password1Output = document.getElementById('password1-output');
 var password2 = document.getElementById('password2');
+var password2Output = document.getElementById('password2-output');
 var password1Copy;
 
 //Flags
@@ -24,9 +35,6 @@ var postalCodeValid = false;
 var emailSignupValid = false;
 var password1Valid = false;
 var password2Valid = false;
-
-// Bueno ahora si send help :joy:
-//     Pude validar si los strings son solo texto o solo numeros, pero no logro hacer que ande si tiene ambos. Debe haber algo que no estoy viendo
 
 //Event listeners
 littleName.addEventListener('blur', verifyName);
@@ -47,9 +55,9 @@ postalCode.addEventListener('blur', verifyPostalCode);
 postalCode.addEventListener('focus', postalCodeClear);
 email.addEventListener('blur', verifySignupEmail);
 email.addEventListener('focus', emailSignupClear);
-password1.addEventListener('blur', verifyPassword1);         //Al menos 8 caracteres, formados por letras y números
+password1.addEventListener('blur', verifyPassword1);
 password1.addEventListener('focus', password1Clear);
-password2.addEventListener('blur', verifyPassword2);         //Al menos 8 caracteres, formados por letras y números
+password2.addEventListener('blur', verifyPassword2);
 password2.addEventListener('focus', password2Clear);
 
 // Valida el nombre => Solo letras y debe tener más de 3 letras
@@ -58,9 +66,11 @@ function verifyName(e){
     inputValue = e.target.value;
     if (verifyLetter(inputValue, 3) == false) {
         littleNameValid = false;
+        outputError(littleName, littleNameOutput, 'name');
         return console.log('bandera de nombre mal: '+ littleNameValid);
     } else {
         littleNameValid = true;
+        outputOk(littleName, littleNameOutput, 'name');
         return console.log('bandera del nombre bien: ' + littleNameValid);
     }
 }
@@ -68,6 +78,7 @@ function verifyName(e){
 function littleNameClear(e) {
     if (inputClear(littleNameValid)){
         e.target.value = "";
+        outputClear(littleName, littleNameOutput);
     }
 }
 
@@ -76,9 +87,11 @@ function verifyLastname(e){
     inputValue = e.target.value;
     if (verifyLetter(inputValue, 3) == false) {
         lastNameValid = false;
+        outputError(lastname, lastnameOutput, 'lastname');
         return console.log('bandera del apellido mal: '+ lastNameValid);
     } else {
         lastNameValid = true;
+        outputOk(lastname, lastnameOutput, 'lastname');
         return console.log('bandera del apellido bien: ' + lastNameValid);
     }
 }
@@ -86,6 +99,7 @@ function verifyLastname(e){
 function lastnameClear(e) {
     if (inputClear(lastNameValid)){
         e.target.value = "";
+        outputClear(lastname, lastnameOutput);
     }
 }
 
@@ -95,9 +109,11 @@ function verifyDNI(e){
     inputValue = e.target.value;
     if (verifyNumber(inputValue, 7) == false) {
         console.log('bandera del dni mal');
+        outputError(dni, dniOutput, 'dni');
         return dniValid = false;
     } else {
         console.log('bandera del dni bien');
+        outputOk(dni, dniOutput, 'dni');
         return dniValid = true;
     }
 }
@@ -105,6 +121,7 @@ function verifyDNI(e){
 function dniClear(e){
     if (inputClear(dniValid)){
         e.target.value = "";
+        outputClear(dni, dniOutput);
     }
 }
 
@@ -113,9 +130,12 @@ function verifyBirthdate(e){
     inputValue = e.target.value;
     if (verifyNumber(inputValue, 8) == false) {
         console.log('bandera del cumpleanios mal');
+
+        outputError(birthDate, birthDateOutput, 'birthdate');
         return birthdayValid = false;
     } else {
         console.log('bandera del cumpleanios bien');
+        outputOk(birthDate, birthDateOutput, 'birthdate');
         var day = inputValue.substring(0,2);
         var month = inputValue.substring(2,4);
         var year = inputValue.substring(4);
@@ -128,6 +148,7 @@ function verifyBirthdate(e){
 function birthdayClear(e){
     if (inputClear(birthdayValid)){
         e.target.value = "";
+        outputClear(birthDate, birthDateOutput);
     }
 }
 
@@ -136,9 +157,11 @@ function verifyTelephone(e){
     inputValue = e.target.value;
     if (verifyNumber(inputValue, 10) == false) {
         console.log('bandera del telefono mal');
+        outputError(telephone, telephoneOutput, 'telephone');
         return telephoneValid = false;
     } else {
         console.log('bandera del telefono bien');
+        outputOk(telephone, telephoneOutput, 'telephone');
         return telephoneValid = true;
     }
 }
@@ -146,6 +169,7 @@ function verifyTelephone(e){
 function telephoneClear(e){
     if (inputClear(telephoneValid)){
         e.target.value = "";
+        outputClear(telephone, telephoneOutput);
     }
 }
 
@@ -173,14 +197,17 @@ function verifyAddress(e) {
     if (addressNumbersFlag == true && addressNumbersFlag == true && addressSpaceFlag == true){
         addressValid = true;
         console.log('direccion valida: ' + addressValid);
+        outputOk(address, addressOutput, 'address');
     } else {
         console.log('Direccion invalida: ' + addressValid);
+        outputError(address, addressOutput, 'address');
     }
 }
 // Limpia la direccion si esta mal
 function addressClear(e){
     if (inputClear(addressValid)){
         e.target.value = "";
+        outputClear(address, addressOutput);
     }
 }
 
@@ -203,15 +230,71 @@ function verifyCity(e) {
     }
     if (inputValueLengthFlag == true && anythingElseThanANumberOrALetter == true){
         cityValid = true;
+        outputOk(city, cityOutput, 'city');
         console.log('ciudad valida ' + cityValid);
     } else {
         console.log('ciudad invalida');
+        outputError(city, cityOutput, 'city');
     }
 }
 // Limpia la ciudad si esta mal
 function cityClear(e){
     if (inputClear(cityValid)){
         e.target.value = "";
+        outputClear(city, cityOutput);
+    }
+}
+
+// Valida el codigo postal => Solo números y debe tener entre 4 y 5 números
+function verifyPostalCode(e) {
+    var flag = 0;
+    inputValue = e.target.value;
+    for (var i = 0; i < inputValue.length; i++) {
+        if (isNaN(inputValue[i]) == true) {
+            console.log('no tiene numeros');
+            flag += 1;
+        } else {
+            console.log('tiene numeros');
+
+        }
+    }
+    console.log(inputValue.length);
+    if ((inputValue.length == 4 || inputValue.length == 5) && flag == 0) { //
+        console.log('flag: ' + flag);
+        console.log('codigo postal valido');
+        outputOk(postalCode, postalCodeOutput, 'postal code');
+        return postalCodeValid = true;
+    } else {
+        console.log('codigo postal invalido, value.length: ' + inputValue.length);
+        outputError(postalCode, postalCodeOutput, 'postal code');
+        return postalCodeValid = false;
+    }
+}
+// Limpia el CP si esta mal
+function postalCodeClear(e){
+    if (inputClear(postalCodeValid)){
+        e.target.value = "";
+        outputClear(postalCode, postalCodeOutput);
+    }
+}
+
+// Valida el email => Debe tener un formato de email válido
+function verifySignupEmail(e) {
+    if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(e.target.value)) {
+        console.log('email valido');
+        outputOk(email, emailOutput, 'email');
+        return emailSignupValid = true;
+    } else {
+        console.log('email invalido');
+        outputError(email, emailOutput, 'email');
+        return emailSignupValid = false;
+    }
+}
+// Limpia el email si esta mal
+function emailSignupClear(e){
+    if (emailSignupValid == false) {
+        e.target.value = "";
+        outputClear(email, emailOutput);
     }
 }
 
@@ -235,15 +318,18 @@ function verifyPassword1(e){
     if (passwordNumbersFlag == true && passwordLettersFlag == true && emptyString == false){
         password1Valid = true;
         console.log('password valida: ' + password1Valid);
+        outputOk(password1, password1Output, 'password');
         password1Copy = inputValue;
     } else {
         console.log('Password invalida: ' + password1Valid);
+        outputError(password1, password1Output, 'password');
     }
 }
 // Limpia la contraseña si esta mal
 function password1Clear(e){
     if (inputClear(password1Valid)){
         e.target.value = "";
+        outputClear(password1, password1Output);
     }
 }
 
@@ -253,68 +339,24 @@ function verifyPassword2(e) {
     if (inputValue === password1Copy) {
         password2Valid = password1Valid;
         console.log('es igual: ' + password2Valid);
+        outputOk(password2, password2Output, 'password');
     } else {
         console.log('es distinta');
+        outputError(password2, password2Output, 'password');
     }
 }
 //Limpia la confirmacion de la contraseña si esta mal
 function password2Clear(e) {
     if (inputClear(password2Valid)){
         e.target.value = "";
-    }
-}
-
-// Valida el codigo postal => Solo números y debe tener entre 4 y 5 números
-function verifyPostalCode(e) {
-    var flag = 0;
-    inputValue = e.target.value;
-    for (var i = 0; i < inputValue.length; i++) {
-        if (isNaN(inputValue[i]) == true) {
-            console.log('no tiene numeros');
-            flag += 1;
-        } else {
-            console.log('tiene numeros');
-
-        }
-    }
-    console.log(inputValue.length);
-    if ((inputValue.length == 4 || inputValue.length == 5) && flag == 0) { //
-        console.log('flag: ' + flag);
-        console.log('codigo postal valido');
-        return postalCodeValid = true;
-    } else {
-        console.log('codigo postal invalido, value.length: ' + inputValue.length);
-        return postalCodeValid = false;
-    }
-}
-// Limpia el CP si esta mal
-function postalCodeClear(e){
-    if (inputClear(postalCodeValid)){
-        e.target.value = "";
-    }
-}
-
-// Valida el email => Debe tener un formato de email válido
-function verifySignupEmail(e) {
-    if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(e.target.value)) {
-        console.log('email valido');
-        return emailSignupValid = true;
-    } else {
-        console.log('email invalido');
-        return emailSignupValid = false;
-    }
-}
-// Limpia el email si esta mal
-function emailSignupClear(e){
-    if (emailSignupValid == false) {
-        e.target.value = "";
+        outputClear(password2, password2Output);
     }
 }
 
 //Valida si el string tiene numeros ignorando las letras
 function hasItNumbers(inputValue) {
     var numbers = '1234567890';
-    for (i = 0; i < inputValue.length; i++) {
+    for (var i = 0; i < inputValue.length; i++) {
         if (numbers.indexOf(inputValue.charAt(i), 0) != -1) {
             console.log('tiene numeros');
             return true;
@@ -327,7 +369,7 @@ function hasItNumbers(inputValue) {
 //Valida si el string tiene letras ignorando los numeros
 function hasItLetters(inputValue){
     var letters = 'abcdefghyjklmnñopqrstuvwxyz'
-    for(i=0; i<inputValue.length; i++){
+    for(var i=0; i<inputValue.length; i++){
         if (letters.indexOf(inputValue.charAt(i),0)!=-1){
             console.log('tiene letras');
             return true;
@@ -340,7 +382,7 @@ function hasItLetters(inputValue){
 //Valida que el string no tenga otra cosa que no sean numeros o letras
 function hasNumbersOrLetters(inputValue){
     var numerosyletras='abcdefghyjklmnñopqrstuvwxyz0123456789';
-    for(i=0; i<inputValue.length; i++){
+    for(var i=0; i<inputValue.length; i++){
         if (numerosyletras.indexOf(inputValue.charAt(i),0)==-1){
             console.log('tiene signos');
             return false;
@@ -403,4 +445,22 @@ function inputClear(flag){
         console.log('limpiar el input');
         return true
     }
+}
+
+// Muestra la caja verde y el mensaje de input valido si estan bien ingresados
+function outputOk(inputBox, outputMessage, type){
+    outputMessage.innerHTML = 'Valid ' + type;
+    outputMessage.className = 'message-ok';
+    inputBox.className = 'signup-input-ok';
+}
+// Muestra la caja roja y el mensaje de input invalido si estan mal ingresados
+function outputError(inputBox, outputMessage, type){
+    outputMessage.innerHTML = 'Invalid ' + type;
+    outputMessage.className = 'message-error';
+    inputBox.className = 'signup-input-error';
+}
+// Borra el mensaje de los inputs y el color de la caja si hay que corregirlos
+function outputClear(inputBox, outputMessage){
+    outputMessage.className = 'message-hidden';
+    inputBox.className = 'signup-input';
 }
