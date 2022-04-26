@@ -49,7 +49,7 @@
         <div class="login-and-signup-main-container">
             <main class="container">
                 <header>
-                    <h1><a href="./index.html">Trackgenix</a></h1>
+                    <h1><a href="./index.html" id="main-title">Trackgenix</a></h1>
                     <a href="https://radiumrocket.com/">
                         <img id="rr-logo"
                              src="https://radiumrocket.com/static/rocket-logo-883f208f5b6a41d21540cfecae22fa07.png"
@@ -74,7 +74,7 @@
                         <input type="checkbox" id="remember-me" name="remember-me">
                         <label for="remember-me">Remember me</label>
                     </div>
-                    <input type="submit" class="continue-button" value="Continue">
+                    <input type="submit" class="continue-button" value="Continue" id="myBtn">
 <!--                    <button class="continue-button" value="Continue">Continue</button>-->
                     <p class="box-bottom-text" id="forgot-password"><a href="#">Forgot password?</a></p>
                     <p class="box-bottom-text">Don't have an account?
@@ -83,13 +83,20 @@
                 </form>
             </section>
         </div>
-<!--        <div id="myModal" class="modal">-->
-<!--            <div class="modal-content">-->
-<!--                <span class="close">&times;</span>-->
-<!--                <p>Some text in the Modal..</p>-->
-<!--            </div>-->
-
-<!--        </div>-->
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-header">Modal Header</h2>
+                </div>
+                <div class="modal-body">
+                    <p id="email-modal-text"></p>
+                    <p id="password-modal-text"></p>
+                </div>
+            </div>
+        </div>
         <script src="../javascript/login.js"></script>
     </body>
 </html>

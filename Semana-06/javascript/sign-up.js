@@ -1,3 +1,5 @@
+// /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
+
 //HTML Objects
 var littleName = document.getElementById('name');
 var littleNameOutput = document.getElementById('name-output')
@@ -22,6 +24,21 @@ var password1Output = document.getElementById('password1-output');
 var password2 = document.getElementById('password2');
 var password2Output = document.getElementById('password2-output');
 var password1Copy;
+
+//Modal messages
+var modalTittle = document.getElementById('modal-header');
+var littleNameModalText = document.getElementById('littlename-modal-text');
+var lastnameModalText = document.getElementById('lastname-modal-text');
+var dniModalText = document.getElementById('dni-modal-text');
+var birthdateModalText = document.getElementById('dni-modal-text');
+var telephoneModalText = document.getElementById('telephone-modal-text');
+var addressModalText = document.getElementById('address-modal-text');
+var cityModalText = document.getElementById('city-modal-text');
+var postalCodeModalText = document.getElementById('postalCode-modal-text');
+var emailModalText = document.getElementById('email-modal-text');
+var password1ModalText = document.getElementById('password1-modal-text');
+var password2ModalText = document.getElementById('password2-modal-text');
+
 
 //Flags
 var littleNameValid = false;
@@ -135,13 +152,25 @@ function verifyBirthdate(e){
         return birthdayValid = false;
     } else {
         console.log('bandera del cumpleanios bien');
-        outputOk(birthDate, birthDateOutput, 'birthdate');
+
         var day = inputValue.substring(0,2);
         var month = inputValue.substring(2,4);
         var year = inputValue.substring(4);
-        console.log('el dia es '+day + 'mes' + month + 'anio' + year);
-        e.target.value = day + '/' + month + '/' + year;
-        return birthdayValid = true;
+        if ((day > 0 && day < 32) && (month > 0 && month < 13) && (year > 1900 && year < 2004)){
+            outputOk(birthDate, birthDateOutput, 'birthdate');
+            console.log('el dia es '+day + 'mes' + month + 'anio' + year);
+            e.target.value = day + '/' + month + '/' + year;
+            return birthdayValid = true;
+        } else {
+            console.log('bandera del cumpleanios mal');
+
+            outputError(birthDate, birthDateOutput, 'birthdate');
+            return birthdayValid = false;
+        }
+        // outputOk(birthDate, birthDateOutput, 'birthdate');
+        // console.log('el dia es '+day + 'mes' + month + 'anio' + year);
+        // e.target.value = day + '/' + month + '/' + year;
+        // return birthdayValid = true;
     }
 }
 //Limpia la fecha si esta mal
@@ -280,7 +309,7 @@ function postalCodeClear(e){
 
 // Valida el email => Debe tener un formato de email válido
 function verifySignupEmail(e) {
-    if (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(e.target.value)) {
+    if (/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(e.target.value)) {
         console.log('email valido');
         outputOk(email, emailOutput, 'email');
         return emailSignupValid = true;
@@ -463,4 +492,126 @@ function outputError(inputBox, outputMessage, type){
 function outputClear(inputBox, outputMessage){
     outputMessage.className = 'message-hidden';
     inputBox.className = 'signup-input';
+}
+
+// Verifica que no este el campo vacio
+function outputRequired(inputBox, outputMessage){
+    outputMessage.innerHTML = 'This field is required';
+    outputMessage.className = 'message-error';
+    inputBox.className = 'signup-input-error';
+}
+
+// //////////////MODAL//////////////////
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("createBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function(e) {
+    e.preventDefault();
+
+    if (littleName.value.length == 0){
+        outputRequired(littleName, littleNameOutput);
+    } else if (lastname.value.length == 0){
+        outputRequired(lastname, lastnameOutput);
+    } else if (dni.value.length == 0){
+        outputRequired(dni, dniOutput);
+    } else if (birthDate.value.length == 0){
+        outputRequired(birthDate, birthDateOutput);
+    } else if (telephone.value.length == 0){
+        outputRequired(telephone, telephoneOutput);
+    } else if (address.value.length == 0){
+        outputRequired(address, addressOutput);
+    } else if (city.value.length == 0){
+        outputRequired(city, cityOutput);
+    } else if (postalCode.value.length == 0){
+        outputRequired(postalCode, postalCodeOutput);
+    } else if (email.value.length == 0){
+        outputRequired(email, emailOutput);
+    } else if (password1.value.length == 0){
+        outputRequired(password1, password1Output);
+    } else if (password2.value.length == 0){
+        outputRequired(password2, password2Output);
+    } else {
+        modal.style.display = "block";
+        if (littleNameValid == false){
+            modalTittle.textContent = 'Sign up failed';
+            littleNameModalText.textContent = 'Name: ' + littleName.value + ' not valid';
+        } else if (lastNameValid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            lastnameModalText.textContent = 'Lastname: ' + lastname.value + ' not valid';
+        } else if (dniValid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            dniModalText.textContent = 'DNI: ' + dni.value + ' not valid';
+        } else if (birthdayValid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            birthdateModalText.textContent = 'Birthdate: ' + birthDate.value + ' not valid';
+        } else if (telephoneValid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            telephoneModalText.textContent = 'Telephone: ' + telephone.value + ' not valid';
+        } else if (addressValid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            addressModalText.textContent = 'Address: ' + address.value + ' not valid';
+        } else if (cityValid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            cityModalText.textContent = 'City: ' + city.value + ' not valid';
+        } else if (postalCodeValid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            postalCodeModalText.textContent = 'Postalcode: ' + postalCode.value + ' not valid';
+        } else if (emailSignupValid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            emailModalText.textContent = 'Email: ' + email.value + ' not valid';
+        } else if (password1Valid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            password1ModalText.textContent = 'Password: ' + password1.value + ' not valid';
+        } else if (password2Valid == false) {
+            modalTittle.textContent = 'Sign up failed';
+            password2ModalText.textContent = 'Password confirmation: ' + password2.value + ' not valid';
+        } else {
+            modalTittle.textContent = 'Signed up successfully';
+            littleNameModalText.textContent = 'Name: ' + littleName.value + ' valid';
+            lastnameModalText.textContent = 'Lastname: ' + lastname.value + ' valid';
+            dniModalText.textContent = 'DNI: ' + dni.value + ' valid';
+            birthdateModalText.textContent = 'Birthdate: ' + birthDate.value + ' valid';
+            telephoneModalText.textContent = 'Telephone: ' + telephone.value + ' valid';
+            addressModalText.textContent = 'Address: ' + address.value + ' valid';
+            cityModalText.textContent = 'City: ' + city.value + ' valid';
+            postalCodeModalText.textContent = 'Postalcode: ' + postalCode.value + ' valid';
+            emailModalText.textContent = 'Email: ' + email.value + ' valid';
+            password1ModalText.textContent = 'Password: ' + password1.value + ' valid';
+            password2ModalText.textContent = 'Password confirmation: ' + password2.value + ' valid';
+        }
+    }
+
+
+    // else if (password.value.length == 0) {
+    //     outputRequired(password, passwordOutput);
+    // } else {
+    //     modal.style.display = "block";
+    //     if (emailFlag == false){
+    //         emailModalText.textContent = 'Email: ' + email.value + ' not valid';
+    //     } else if (passwordFlag == false) {
+    //         passwordModalText.textContent = 'Password: ' + password.value + ' not valid';
+    //     } else {
+    //         emailModalText.textContent = 'Email: ' + email.value + ' valido';
+    //         passwordModalText.textContent = 'Password: ' + password.value + ' valido';
+    //     }
+    // }
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }

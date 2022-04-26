@@ -50,7 +50,7 @@
         <div class="login-and-signup-main-container">
             <main class="container">
                 <header>
-                    <h1><a href="./index.html">Trackgenix</a></h1>
+                    <h1><a href="./index.html" id="main-title">Trackgenix</a></h1>
                     <a href="https://radiumrocket.com/">
                         <img id="rr-logo"
                              src="https://radiumrocket.com/static/rocket-logo-883f208f5b6a41d21540cfecae22fa07.png"
@@ -61,62 +61,85 @@
             </main>
             <section class="signup-container">
                 <h2 class="login-signup-title">Sign Up</h2>
-                <form class="form-section">
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="Name" id="name">
-                        <p id="name-output"></p>
+                <form  class="form-section">
+                    <div id="signup-form">
+                        <div class="form-splitter">
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Name" id="name">
+                                <p id="name-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Lastname" id="lastname">
+                                <p id="lastname-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="DNI" id="dni">
+                                <p id="dni-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Birth date ddmmyyyy" id="birthDate">
+                                <p id="birthDate-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Telephone" id="telephone">
+                                <p id="telephone-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Address" id="address">
+                                <p id="address-output"></p>
+                            </div>
+                        </div>
+                        <div class="form-splitter">
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="City" id="city">
+                                <p id="city-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Postal Code" id="postalCode">
+                                <p id="postalCode-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Email" id="email">
+                                <p id="email-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="password" class="signup-input" placeholder="Password" id="password1">
+                                <p id="password1-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="password" class="signup-input" placeholder="Repeat password" id="password2">
+                                <p id="password2-output"></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="Lastname" id="lastname">
-                        <p id="lastname-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="DNI" id="dni">
-                        <p id="dni-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="Birth date" id="birthDate">
-                        <p id="birthDate-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="Telephone" id="telephone">
-                        <p id="telephone-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="Address" id="address">
-                        <p id="address-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="City" id="city">
-                        <p id="city-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="Postal Code" id="postalCode">
-                        <p id="postalCode-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="text" class="signup-input" placeholder="Email" id="email">
-                        <p id="email-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="password" class="signup-input" placeholder="Password" id="password1">
-                        <p id="password1-output"></p>
-                    </div>
-                    <div class="input-container">
-                        <input type="password" class="signup-input" placeholder="Repeat password" id="password2">
-                        <p id="password2-output"></p>
-                    </div>
-
-
-
-
-
-
-                    <button class="continue-button" value="Continue">Continue</button>
+                    <input type="submit" class="continue-button" value="Create" id="createBtn">
                     <p class="box-bottom-text">Already have an account? <a id="signup-now" href="./login.html">Log in now</a></p>
                 </form>
             </section>
         </div>
-    <script src="../javascript/sign-up.js"></script>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-header">Modal Header</h2>
+                </div>
+                <div class="modal-body">
+                    <p id="littlename-modal-text"></p>
+                    <p id="lastname-modal-text"></p>
+                    <p id="dni-modal-text"></p>
+                    <p id="birthdate-modal-text"></p>
+                    <p id="telephone-modal-text"></p>
+                    <p id="address-modal-text"></p>
+                    <p id="city-modal-text"></p>
+                    <p id="postalCode-modal-text"></p>
+                    <p id="email-modal-text"></p>
+                    <p id="password1-modal-text"></p>
+                    <p id="password2-modal-text"></p>
+                </div>
+            </div>
+        </div>
+        <script src="../javascript/sign-up.js"></script>
     </body>
 </html>
