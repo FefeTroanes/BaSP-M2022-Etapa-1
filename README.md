@@ -132,7 +132,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] [CSS](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-03/)   (3th week)
 - [x] [CSS Responsive Design](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-04/) (4th week)
 - [x] [JS Exercises](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-05/) (5th week)
-- [x] [JS DOM: Login and Signup pages added with their JS logic](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-06/views/) (6th week)
+- [x] [JS & DOM: Login and Signup pages added with their JS logic](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-06/views/) (6th week)
+- [x] [JS Fetch API](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-07/views/) (7th week)
 <!--
     - [ ] Nested Feature
 -->

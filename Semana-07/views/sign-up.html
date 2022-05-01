@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Trackgenix is the only employee time control tool you'll need to understand
+        your business. Characteristics. All the functionalities of the control ...">
+        <link rel="stylesheet" href="../styles/reset.css">
+        <link rel="stylesheet" href="../styles/header.css">
+        <link rel="stylesheet" href="../styles/landing.css">
+        <link rel="stylesheet" href="../styles/sidebar.css">
+        <link rel="stylesheet" href="../styles/footer.css">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="stylesheet" href="../styles/login.css">
+        <link rel="stylesheet" href="../styles/sign-up.css">
+        <title>Trackgenix</title>
+    </head>
+    <body>
+        <div class="sidebar-container">
+            <aside>
+                <form id="search-container" method="post">
+                    <input type="search" placeholder="search">
+                </form>
+                <div id="menu-container">
+                    <ul class="menu">
+                        <span>Menu</span>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./sign-up.html">Sign up</a></li>
+                        <li><a href="./login.html">Log in</a></li>
+                    </ul>
+                    <div id="get-in-touch">
+                        <a href="#">Get in touch</a>
+                        <p>
+                            Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac
+                            varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum.
+                            Sed nulla amet lorem feugiat tempus aliquam.
+                        </p>
+                    </div>
+                    <div>
+                        <img id="address-icon" src="../assets/envelope.svg" alt="Envelope">
+                        <a href="mailto:information@untitled.tld">information@untitled.tld</a>
+                    </div>
+                    <div>
+                        <img id="address-icon" src="../assets/home.svg" alt="Home">
+                        <address>1234 Somewhere Road #8254 Nashville, TN 00000-0000</address>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <div class="login-and-signup-main-container">
+            <main class="container">
+                <header>
+                    <h1><a href="./index.html" id="main-title">Trackgenix</a></h1>
+                    <a href="https://radiumrocket.com/">
+                        <img id="rr-logo"
+                             src="https://radiumrocket.com/static/rocket-logo-883f208f5b6a41d21540cfecae22fa07.png"
+                             alt="Radium Rocket logo"
+                        >
+                    </a>
+                </header>
+            </main>
+            <section class="signup-container">
+                <h2 class="login-signup-title">Sign Up</h2>
+                <form  class="form-section">
+                    <div id="signup-form">
+                        <div class="form-splitter">
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Name" id="name">
+                                <p id="name-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Lastname" id="lastname">
+                                <p id="lastname-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="DNI" id="dni">
+                                <p id="dni-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Birth date ddmmyyyy" id="birthDate">
+                                <p id="birthDate-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Telephone" id="telephone">
+                                <p id="telephone-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Address" id="address">
+                                <p id="address-output"></p>
+                            </div>
+                        </div>
+                        <div class="form-splitter">
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="City" id="city">
+                                <p id="city-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Postal Code" id="postalCode">
+                                <p id="postalCode-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" class="signup-input" placeholder="Email" id="email">
+                                <p id="email-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="password" class="signup-input" placeholder="Password" id="password1">
+                                <p id="password1-output"></p>
+                            </div>
+                            <div class="input-container">
+                                <input type="password" class="signup-input" placeholder="Repeat password" id="password2">
+                                <p id="password2-output"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" class="continue-button" value="Create" id="createBtn">
+                    <p class="box-bottom-text">Already have an account? <a id="signup-now" href="./login.html">Log in now</a></p>
+                </form>
+            </section>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-header">Modal Header</h2>
+                </div>
+                <div class="modal-body">
+                    <p id="littlename-modal-text"></p>
+                    <p id="lastname-modal-text"></p>
+                    <p id="dni-modal-text"></p>
+                    <p id="birthdate-modal-text"></p>
+                    <p id="telephone-modal-text"></p>
+                    <p id="address-modal-text"></p>
+                    <p id="city-modal-text"></p>
+                    <p id="postalCode-modal-text"></p>
+                    <p id="email-modal-text"></p>
+                    <p id="password1-modal-text"></p>
+                    <p id="password2-modal-text"></p>
+                </div>
+            </div>
+        </div>
+        <script src="../javascript/sign-up.js"></script>
+    </body>
+</html>
