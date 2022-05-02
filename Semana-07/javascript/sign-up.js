@@ -36,6 +36,7 @@ var postalCodeModalText = document.getElementById('postalCode-modal-text');
 var emailModalText = document.getElementById('email-modal-text');
 var password1ModalText = document.getElementById('password1-modal-text');
 var password2ModalText = document.getElementById('password2-modal-text');
+var modalBody = document.getElementById('modal-main-body');
 
 
 //Flags
@@ -50,6 +51,7 @@ var postalCodeValid = false;
 var emailSignupValid = false;
 var password1Valid = false;
 var password2Valid = false;
+var errorsArray = [];
 
 //Event listeners
 littleName.addEventListener('blur', verifyName);
@@ -116,13 +118,20 @@ function lastnameClear(e) {
 // Valida el dni => Solo número y debe tener más de 7 números
 function verifyDNI(e){
     inputValue = e.target.value;
-    if (verifyNumber(inputValue, 7) == false) {
-        outputError(dni, dniOutput, 'dni');
-        return dniValid = false;
+    if (inputValue.length >= 7 && inputValue.length <= 8) {
+        if (verifyNumber(inputValue, 7) == false) {
+            outputError(dni, dniOutput, 'dni');
+            return dniValid = false;
+        } else {
+            outputOk(dni, dniOutput, 'dni');
+            return dniValid = true;
+        }
     } else {
-        outputOk(dni, dniOutput, 'dni');
-        return dniValid = true;
+        dniOutput.innerHTML = 'DNI must have between 7 and 8 numbers';
+        dniOutput.className = 'message-error';
+        dni.className = 'signup-input-error';
     }
+
 }
 // Limipia el dni si esta mal
 function dniClear(e){
@@ -132,19 +141,19 @@ function dniClear(e){
     }
 }
 
-//Valida la fecha de nacimiento => Con formato dd/mm/aaaa
+//Valida la fecha de nacimiento => Con formato mm/dd/aaaa
 function verifyBirthdate(e){
     inputValue = e.target.value;
     if (verifyNumber(inputValue, 8) == false) {
         outputError(birthDate, birthDateOutput, 'birthdate');
         return birthdayValid = false;
     } else {
-        var day = inputValue.substring(0,2);
-        var month = inputValue.substring(2,4);
+        var month = inputValue.substring(0,2);
+        var day = inputValue.substring(2,4);
         var year = inputValue.substring(4);
         if ((day > 0 && day < 32) && (month > 0 && month < 13) && (year > 1900 && year < 2004)){
             outputOk(birthDate, birthDateOutput, 'birthdate');
-            e.target.value = day + '/' + month + '/' + year;
+            e.target.value = month + '/' + day + '/' + year;
             return birthdayValid = true;
         } else {
             outputError(birthDate, birthDateOutput, 'birthdate');
@@ -163,13 +172,20 @@ function birthdayClear(e){
 //Valida el telefono => Solo número y debe tener 10 números
 function verifyTelephone(e){
     inputValue = e.target.value;
-    if (verifyNumber(inputValue, 10) == false) {
-        outputError(telephone, telephoneOutput, 'telephone');
-        return telephoneValid = false;
+    if (inputValue.length == 10){
+        if (verifyNumber(inputValue, 10) == false) {
+            outputError(telephone, telephoneOutput, 'telephone');
+            return telephoneValid = false;
+        } else {
+            outputOk(telephone, telephoneOutput, 'telephone');
+            return telephoneValid = true;
+        }
     } else {
-        outputOk(telephone, telephoneOutput, 'telephone');
-        return telephoneValid = true;
+        telephoneOutput.innerHTML = 'Phone must have 10 numbers';
+        telephoneOutput.className = 'message-error';
+        telephone.className = 'signup-input-error';
     }
+
 }
 //Limpia el telefono si esta mal
 function telephoneClear(e){
@@ -493,18 +509,111 @@ btn.onclick = function(e) {
             modalTittle.textContent = 'Sign up failed';
             password2ModalText.textContent = 'Password confirmation: ' + password2.value + ' not valid';
         } else {
-            modalTittle.textContent = 'Signed up successfully';
-            littleNameModalText.textContent = 'Name: ' + littleName.value + ' valid';
-            lastnameModalText.textContent = 'Lastname: ' + lastname.value + ' valid';
-            dniModalText.textContent = 'DNI: ' + dni.value + ' valid';
-            birthdateModalText.textContent = 'Birthdate: ' + birthDate.value + ' valid';
-            telephoneModalText.textContent = 'Telephone: ' + telephone.value + ' valid';
-            addressModalText.textContent = 'Address: ' + address.value + ' valid';
-            cityModalText.textContent = 'City: ' + city.value + ' valid';
-            postalCodeModalText.textContent = 'Postalcode: ' + postalCode.value + ' valid';
-            emailModalText.textContent = 'Email: ' + email.value + ' valid';
-            password1ModalText.textContent = 'Password: ' + password1.value + ' valid';
-            password2ModalText.textContent = 'Password confirmation: ' + password2.value + ' valid';
+            fetch("https://basp-m2022-api-rest-server.herokuapp.com/signup".concat("?name=", littleName.value,
+                "&lastName=", lastname.value,
+                "&dni=", dni.value,
+                "&dob=", birthDate.value,
+                "&phone=", telephone.value,
+                "&address=", address.value,
+                "&city=", city.value,
+                "&zip=", postalCode.value,
+                "&email=", email.value,
+                "&password=", password1.value))
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success){
+                        console.log('data: ', data);
+                        console.log('data.message: ',data.msg)
+                        modalTittle.textContent = data.msg;
+                        // emailModalText.textContent = 'Email: ' + email.value + ' valid';
+                        // passwordModalText.textContent = 'Password: ' + password.value + ' valid';
+                        data.address
+                        console.log('Datos: direccion: ' + data.data.address +
+                            ' ciudad ' + data.data.city +
+                            'dni' + data.data.dni +
+                            'dob' + data.data.dob +
+                            'email' + data.data.email +
+                            'id' + data.data.id +
+                            'lastname' + data.data.lastName +
+                            'name' + data.data.name +
+                            'contrasenia' + data.data.password +
+                            'telefono' + data.data.phone +
+                            'codigo postal' + data.data.zip)
+                        littleNameModalText.textContent = 'Name: ' + data.data.name;
+                        lastnameModalText.textContent = 'Lastname: ' + data.data.lastName;
+                        dniModalText.textContent = 'DNI: ' + data.data.dni;
+                        birthdateModalText.textContent = 'Birthdate: ' + data.data.dob;
+                        telephoneModalText.textContent = 'Telephone: ' + data.data.phone;
+                        addressModalText.textContent = 'Address: ' + data.data.address;
+                        cityModalText.textContent = 'City: ' + data.data.city;
+                        postalCodeModalText.textContent = 'Postalcode: ' + data.data.zip;
+                        emailModalText.textContent = 'Email: ' + data.data.email;
+                        password1ModalText.textContent = 'Password: ' + data.data.password;
+                        //Local storage
+                        localStorage.setItem('name',data.data.name);
+                        localStorage.setItem('lastname',data.data.lastName);
+                        localStorage.setItem('dni',data.data.dni);
+                        localStorage.setItem('dob',data.data.dob);
+                        localStorage.setItem('phone',data.data.phone);
+                        localStorage.setItem('address',data.data.address);
+                        localStorage.setItem('city',data.data.city);
+                        localStorage.setItem('zip',data.data.zip);
+                        localStorage.setItem('email',data.data.email);
+                        localStorage.setItem('password',data.data.password);
+
+                    } else {
+                        // modalTittle.textContent = data.msg;
+                        throw data;
+                    } })
+                .catch(error => {
+                    modalTittle.textContent = 'Signup failed';
+                    console.log('error: ',error);
+                    console.log('errors.lenght: ' + error.errors.length)
+                    for (var i = 0; i < error.errors.length; i++) {
+                        errorsArray.push(error.errors[i].msg)
+                        console.log(error.errors[i].msg);
+
+                    }
+                    console.log('ErrorsArray: ' + errorsArray);
+                    for (var i = 0; i < errorsArray.length; i++){
+                        modalBody.innerHTML = errorsArray[i];
+                    }
+                    // console.log('array de errores: ' + error)
+
+                    // modalTittle.textContent = error.msg;
+                    // emailModalText.textContent = 'Email: ' + email.value;
+                    // passwordModalText.textContent = 'Password: ' + password.value;
+                })
+
+
+
+                // .then(function (response) {
+                //     console.log('Response: ',response);
+                //     jsonResponse = response.json();
+                //     console.log('JsonResponse: ',jsonResponse);
+                //     if (response.ok == false){
+                //         console.log('ta todo pal traste');
+                //     }
+                // })
+                // .then(function (jsonResponse) {
+                //     if(success) {
+                //         console.log('success');
+                //         // handleSuccess(jsonResponse)
+                //     } else {
+                //         console.log('not success');
+                //         // throw jsonResponse
+                //     }
+                //     console.log('respuesta uno');
+                //     // logica que quieren que se ejecute cuando llegue la respuesta
+                // })
+                // .catch(function (error) {
+                //     // handleError(error);
+                //     console.log('respuesta dos');
+                //     console.log('otro json response: ',jsonResponse);
+                //     // logica que. quieren que se ejecute si hay un error
+                // })
+
+
         }
     }
 }
@@ -518,5 +627,21 @@ span.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        errorsArray = [];
+        modalBody.textContent = '';
     }
+}
+
+window.onload = function () {
+    littleName.value = localStorage.getItem('name');
+    lastname.value = localStorage.getItem('lastname');
+    dni.value = localStorage.getItem('dni');
+    birthDate.value = localStorage.getItem('dob');
+    telephone.value = localStorage.getItem('phone');
+    address.value = localStorage.getItem('address');
+    city.value = localStorage.getItem('city');
+    postalCode.value = localStorage.getItem('zip');
+    email.value = localStorage.getItem('email');
+    password1.value = localStorage.getItem('password');
+    password2.value = localStorage.getItem('password');
 }

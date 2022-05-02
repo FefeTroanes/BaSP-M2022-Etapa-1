@@ -50,7 +50,6 @@ function passwordValidation(e){
             hasLetters = true;
         }
     }
-
     for(var i=0; i<passwordValue.length; i++){
         if (numerosyletras.indexOf(passwordValue.charAt(i),0)==-1){
             notANumberOrLetter = false;
@@ -116,38 +115,66 @@ btn.onclick = function(e) {
             modalTittle.textContent = 'Login failed';
             passwordModalText.textContent = 'Password: ' + password.value + ' not valid';
         } else {
-            modalTittle.textContent = 'Logged in';
-            emailModalText.textContent = 'Email: ' + email.value + ' valid';
-            passwordModalText.textContent = 'Password: ' + password.value + ' valid';
+            // modalTittle.textContent = 'Logged in';
+            // emailModalText.textContent = 'Email: ' + email.value + ' valid';
+            // passwordModalText.textContent = 'Password: ' + password.value + ' valid';
             fetch("https://basp-m2022-api-rest-server.herokuapp.com/login".concat("?email=", email.value, "&password=", password.value))
-                .then(function (response) {
-                    console.log('Response: ',response);
-                    jsonResponse = response.json();
-                    console.log('JsonResponse: ',jsonResponse);
-                    if (response.ok == false){
-                        console.log('ta todo pal traste');
-                    }
-                })
-                .then(function (jsonResponse) {
-                    if(success) {
-                        console.log('success');
-                        // handleSuccess(jsonResponse)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success){
+                        console.log('esta re bien: ',data.msg)
+
+                        modalTittle.textContent = data.msg;
+                        emailModalText.textContent = 'Email: ' + email.value + ' valid';
+                        passwordModalText.textContent = 'Password: ' + password.value + ' valid';
                     } else {
-                        console.log('not success');
-                        // throw jsonResponse
-                    }
-                    console.log('respuesta uno');
-                    // logica que quieren que se ejecute cuando llegue la respuesta
+                        throw data;
+                    } })
+                .catch(error => {
+                    console.log('error: ',error);
+                    modalTittle.textContent = error.msg;
+                    emailModalText.textContent = 'Email: ' + email.value;
+                    passwordModalText.textContent = 'Password: ' + password.value;
                 })
-                .catch(function (error) {
-                    // handleError(error);
-                    console.log('respuesta dos');
-                    console.log(jsonResponse);
-                    // logica que. quieren que se ejecute si hay un error
-                })
+
+                }
         }
+        // fetch("https://basp-m2022-api-rest-server.herokuapp.com/login".concat("?email=", email.value, "&password=", password.value))
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         if (data.success){
+        //             // console.log('esta re bien: ',data.msg)
+        //             modalTittle.textContent = 'esta re bien: ' + data.msg;
+        //             emailModalText.textContent = 'Email: ' + email.value + ' valid';
+        //             passwordModalText.textContent = 'Password: ' + password.value + ' valid';
+        //         } else if (passwordFlag == false) {
+        //             // console.log('esta re mal: ',data.msg);
+        //             modalTittle.textContent = data.msg;
+        //             passwordModalText.textContent = 'Password: ' + password.value + ' not valid';
+        //         } else if (emailFlag == false){
+        //             modalTittle.textContent = data.msg;
+        //             emailModalText.textContent = 'Email: ' + email.value + ' not valid';
+        //         } else
+        //     })
+        //     .catch(error => {
+        //         console.log('error: ',error)
+        //     })
+
+
+        // if (emailFlag == false){
+        //     modalTittle.textContent = 'Login failed';
+        //     emailModalText.textContent = 'Email: ' + email.value + ' not valid';
+        // } else if (passwordFlag == false) {
+        //     modalTittle.textContent = 'Login failed';
+        //     passwordModalText.textContent = 'Password: ' + password.value + ' not valid';
+        // } else {
+        //     modalTittle.textContent = 'Logged in';
+        //     emailModalText.textContent = 'Email: ' + email.value + ' valid';
+        //     passwordModalText.textContent = 'Password: ' + password.value + ' valid';
+        //
+        // }
     }
-}
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
