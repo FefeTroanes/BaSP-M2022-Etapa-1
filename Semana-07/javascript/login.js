@@ -24,8 +24,9 @@ function emailValidation(e) {
 // Email clear
 function emailClear(e){
     if (emailFlag == false) {
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(email, emailOutput);
+        email.className= 'login-input';
     }
 }
 
@@ -65,8 +66,9 @@ function passwordValidation(e){
 
 function passwordClear(e){
     if (passwordFlag != true){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(password, passwordOutput)
+        // password.className= 'login-input';
     }
 }
 
@@ -107,7 +109,8 @@ btn.onclick = function(e) {
     } else if (password.value.length == 0) {
         outputRequired(password, passwordOutput);
     } else {
-        modal.style.display = "block";
+        // modal.style.display = "block";
+        modal.className = 'modal-display-block';
         if (emailFlag == false){
             modalTittle.textContent = 'Login failed';
             emailModalText.textContent = 'Email: ' + email.value + ' not valid';
@@ -178,12 +181,14 @@ btn.onclick = function(e) {
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    modal.style.display = "none";
+    // modal.style.display = "none";
+    modal.className = "modal-display-none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        // modal.style.display = "none";
+        modal.className = "modal-display-none";
     }
 }

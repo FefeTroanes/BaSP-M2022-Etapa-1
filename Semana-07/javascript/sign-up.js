@@ -91,7 +91,7 @@ function verifyName(e){
 // Limpia el nombre si esta mal
 function littleNameClear(e) {
     if (inputClear(littleNameValid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(littleName, littleNameOutput);
     }
 }
@@ -110,7 +110,7 @@ function verifyLastname(e){
 // Limpia el apellido si esta mal
 function lastnameClear(e) {
     if (inputClear(lastNameValid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(lastname, lastnameOutput);
     }
 }
@@ -136,7 +136,7 @@ function verifyDNI(e){
 // Limipia el dni si esta mal
 function dniClear(e){
     if (inputClear(dniValid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(dni, dniOutput);
     }
 }
@@ -164,7 +164,7 @@ function verifyBirthdate(e){
 //Limpia la fecha si esta mal
 function birthdayClear(e){
     if (inputClear(birthdayValid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(birthDate, birthDateOutput);
     }
 }
@@ -190,7 +190,7 @@ function verifyTelephone(e){
 //Limpia el telefono si esta mal
 function telephoneClear(e){
     if (inputClear(telephoneValid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(telephone, telephoneOutput);
     }
 }
@@ -222,7 +222,7 @@ function verifyAddress(e) {
 // Limpia la direccion si esta mal
 function addressClear(e){
     if (inputClear(addressValid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(address, addressOutput);
     }
 }
@@ -249,7 +249,7 @@ function verifyCity(e) {
 // Limpia la ciudad si esta mal
 function cityClear(e){
     if (inputClear(cityValid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(city, cityOutput);
     }
 }
@@ -274,7 +274,7 @@ function verifyPostalCode(e) {
 // Limpia el CP si esta mal
 function postalCodeClear(e){
     if (inputClear(postalCodeValid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(postalCode, postalCodeOutput);
     }
 }
@@ -292,7 +292,7 @@ function verifySignupEmail(e) {
 // Limpia el email si esta mal
 function emailSignupClear(e){
     if (emailSignupValid == false) {
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(email, emailOutput);
     }
 }
@@ -323,7 +323,7 @@ function verifyPassword1(e){
 // Limpia la contraseña si esta mal
 function password1Clear(e){
     if (inputClear(password1Valid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(password1, password1Output);
     }
 }
@@ -341,7 +341,7 @@ function verifyPassword2(e) {
 //Limpia la confirmacion de la contraseña si esta mal
 function password2Clear(e) {
     if (inputClear(password2Valid)){
-        e.target.value = "";
+        // e.target.value = "";
         outputClear(password2, password2Output);
     }
 }
@@ -370,9 +370,9 @@ function hasItLetters(inputValue){
 
 //Valida que el string no tenga otra cosa que no sean numeros o letras
 function hasNumbersOrLetters(inputValue){
-    var numerosyletras='abcdefghyjklmnñopqrstuvwxyz0123456789';
+    var numbersAndLetters='abcdefghyjklmnñopqrstuvwxyz0123456789';
     for(var i=0; i<inputValue.length; i++){
-        if (numerosyletras.indexOf(inputValue.charAt(i),0)==-1){
+        if (numbersAndLetters.indexOf(inputValue.charAt(i),0)==-1){
             return false;
         } else {
             return true;
@@ -474,7 +474,8 @@ btn.onclick = function(e) {
     } else if (password2.value.length == 0){
         outputRequired(password2, password2Output);
     } else {
-        modal.style.display = "block";
+        // modal.style.display = "block";
+        modal.className = "modal-display-block";
         if (littleNameValid == false){
             modalTittle.textContent = 'Sign up failed';
             littleNameModalText.textContent = 'Name: ' + littleName.value + ' not valid';
@@ -525,20 +526,6 @@ btn.onclick = function(e) {
                         console.log('data: ', data);
                         console.log('data.message: ',data.msg)
                         modalTittle.textContent = data.msg;
-                        // emailModalText.textContent = 'Email: ' + email.value + ' valid';
-                        // passwordModalText.textContent = 'Password: ' + password.value + ' valid';
-                        data.address
-                        console.log('Datos: direccion: ' + data.data.address +
-                            ' ciudad ' + data.data.city +
-                            'dni' + data.data.dni +
-                            'dob' + data.data.dob +
-                            'email' + data.data.email +
-                            'id' + data.data.id +
-                            'lastname' + data.data.lastName +
-                            'name' + data.data.name +
-                            'contrasenia' + data.data.password +
-                            'telefono' + data.data.phone +
-                            'codigo postal' + data.data.zip)
                         littleNameModalText.textContent = 'Name: ' + data.data.name;
                         lastnameModalText.textContent = 'Lastname: ' + data.data.lastName;
                         dniModalText.textContent = 'DNI: ' + data.data.dni;
@@ -560,9 +547,7 @@ btn.onclick = function(e) {
                         localStorage.setItem('zip',data.data.zip);
                         localStorage.setItem('email',data.data.email);
                         localStorage.setItem('password',data.data.password);
-
                     } else {
-                        // modalTittle.textContent = data.msg;
                         throw data;
                     } })
                 .catch(error => {
@@ -572,61 +557,27 @@ btn.onclick = function(e) {
                     for (var i = 0; i < error.errors.length; i++) {
                         errorsArray.push(error.errors[i].msg)
                         console.log(error.errors[i].msg);
-
                     }
                     console.log('ErrorsArray: ' + errorsArray);
                     for (var i = 0; i < errorsArray.length; i++){
                         modalBody.innerHTML = errorsArray[i];
                     }
-                    // console.log('array de errores: ' + error)
-
-                    // modalTittle.textContent = error.msg;
-                    // emailModalText.textContent = 'Email: ' + email.value;
-                    // passwordModalText.textContent = 'Password: ' + password.value;
                 })
-
-
-
-                // .then(function (response) {
-                //     console.log('Response: ',response);
-                //     jsonResponse = response.json();
-                //     console.log('JsonResponse: ',jsonResponse);
-                //     if (response.ok == false){
-                //         console.log('ta todo pal traste');
-                //     }
-                // })
-                // .then(function (jsonResponse) {
-                //     if(success) {
-                //         console.log('success');
-                //         // handleSuccess(jsonResponse)
-                //     } else {
-                //         console.log('not success');
-                //         // throw jsonResponse
-                //     }
-                //     console.log('respuesta uno');
-                //     // logica que quieren que se ejecute cuando llegue la respuesta
-                // })
-                // .catch(function (error) {
-                //     // handleError(error);
-                //     console.log('respuesta dos');
-                //     console.log('otro json response: ',jsonResponse);
-                //     // logica que. quieren que se ejecute si hay un error
-                // })
-
-
         }
     }
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    modal.style.display = "none";
+    // modal.style.display = "none";
+    modal.className = 'modal-display-none';
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        // modal.style.display = "none";
+        modal.className = 'modal-display-none';
         errorsArray = [];
         modalBody.textContent = '';
     }
@@ -644,4 +595,18 @@ window.onload = function () {
     email.value = localStorage.getItem('email');
     password1.value = localStorage.getItem('password');
     password2.value = localStorage.getItem('password');
+
+    if (localStorage.getItem('name') !== null) {
+        littleNameValid = true;
+        lastNameValid = true;
+        dniValid = true;
+        birthdayValid = true;
+        telephoneValid = true;
+        addressValid = true;
+        cityValid = true;
+        postalCodeValid = true;
+        emailSignupValid = true;
+        password1Valid = true;
+        password2Valid = true;
+    }
 }
