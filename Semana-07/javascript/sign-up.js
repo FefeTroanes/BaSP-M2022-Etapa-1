@@ -62,7 +62,7 @@ dni.addEventListener('blur', verifyDNI);
 dni.addEventListener('focus', dniClear)
 birthDate.addEventListener('blur', verifyBirthdate);
 birthDate.addEventListener('focus', birthdayClear);
-telephone.addEventListener('blur', verifyTelephone); //Solo número y debe tener 10 números
+telephone.addEventListener('blur', verifyTelephone);
 telephone.addEventListener('focus', telephoneClear);
 address.addEventListener('blur', verifyAddress);
 address.addEventListener('focus', addressClear);
@@ -77,7 +77,7 @@ password1.addEventListener('focus', password1Clear);
 password2.addEventListener('blur', verifyPassword2);
 password2.addEventListener('focus', password2Clear);
 
-// Valida el nombre => Solo letras y debe tener más de 3 letras
+// Validates the name => Only letters and must have more than 3 letters
 function verifyName(e){
     inputValue = e.target.value;
     if (verifyLetter(inputValue, 3) == false) {
@@ -88,15 +88,13 @@ function verifyName(e){
         outputOk(littleName, littleNameOutput, 'name');
     }
 }
-// Limpia el nombre si esta mal
 function littleNameClear(e) {
     if (inputClear(littleNameValid)){
-        // e.target.value = "";
         outputClear(littleName, littleNameOutput);
     }
 }
 
-//Valida el apellido => Solo letras y debe tener más de 3 letras.
+// Validates last name => Letters only and must be more than 3 letters.
 function verifyLastname(e){
     inputValue = e.target.value;
     if (verifyLetter(inputValue, 3) == false) {
@@ -107,15 +105,13 @@ function verifyLastname(e){
         outputOk(lastname, lastnameOutput, 'lastname');
     }
 }
-// Limpia el apellido si esta mal
 function lastnameClear(e) {
     if (inputClear(lastNameValid)){
-        // e.target.value = "";
         outputClear(lastname, lastnameOutput);
     }
 }
 
-// Valida el dni => Solo número y debe tener más de 7 números
+// Validates the DNI => Numbers only and must have more than 7 numbers
 function verifyDNI(e){
     inputValue = e.target.value;
     if (inputValue.length >= 7 && inputValue.length <= 8) {
@@ -133,15 +129,13 @@ function verifyDNI(e){
     }
 
 }
-// Limipia el dni si esta mal
 function dniClear(e){
     if (inputClear(dniValid)){
-        // e.target.value = "";
         outputClear(dni, dniOutput);
     }
 }
 
-//Valida la fecha de nacimiento => Con formato mm/dd/aaaa
+// Validates date of birth => mm/dd/yyyy formatted
 function verifyBirthdate(e){
     inputValue = e.target.value;
     if (verifyNumber(inputValue, 8) == false) {
@@ -161,15 +155,13 @@ function verifyBirthdate(e){
         }
     }
 }
-//Limpia la fecha si esta mal
 function birthdayClear(e){
     if (inputClear(birthdayValid)){
-        // e.target.value = "";
         outputClear(birthDate, birthDateOutput);
     }
 }
 
-//Valida el telefono => Solo número y debe tener 10 números
+// Validates the phone => Only numbers and must have 10 numbers
 function verifyTelephone(e){
     inputValue = e.target.value;
     if (inputValue.length == 10){
@@ -187,15 +179,13 @@ function verifyTelephone(e){
     }
 
 }
-//Limpia el telefono si esta mal
 function telephoneClear(e){
     if (inputClear(telephoneValid)){
-        // e.target.value = "";
         outputClear(telephone, telephoneOutput);
     }
 }
 
-//Valida la direccion => Al menos 5 caracteres con letras, números y un espacio en el medio
+// Validates the address => At least 5 characters with letters, numbers, and a space in the middle
 function verifyAddress(e) {
     var inputValue = e.target.value
     var addressNumbersFlag = false;
@@ -219,15 +209,13 @@ function verifyAddress(e) {
         outputError(address, addressOutput, 'address');
     }
 }
-// Limpia la direccion si esta mal
 function addressClear(e){
     if (inputClear(addressValid)){
-        // e.target.value = "";
         outputClear(address, addressOutput);
     }
 }
 
-//Valida la ciudad => Puede tener letras y numeros y debe tener más de 3 letras
+// Validate the city => It can have letters and numbers and must have more than 3 letters
 function verifyCity(e) {
     var inputValue = e.target.value;
     var inputValueLength = inputValue.length;
@@ -246,15 +234,13 @@ function verifyCity(e) {
         outputError(city, cityOutput, 'city');
     }
 }
-// Limpia la ciudad si esta mal
 function cityClear(e){
     if (inputClear(cityValid)){
-        // e.target.value = "";
         outputClear(city, cityOutput);
     }
 }
 
-// Valida el codigo postal => Solo números y debe tener entre 4 y 5 números
+// Validate the zip code => Numbers only and must have between 4 and 5 numbers
 function verifyPostalCode(e) {
     var flag = 0;
     inputValue = e.target.value;
@@ -271,15 +257,13 @@ function verifyPostalCode(e) {
         return postalCodeValid = false;
     }
 }
-// Limpia el CP si esta mal
 function postalCodeClear(e){
     if (inputClear(postalCodeValid)){
-        // e.target.value = "";
         outputClear(postalCode, postalCodeOutput);
     }
 }
 
-// Valida el email => Debe tener un formato de email válido
+// Validates the email => Must have a valid email format
 function verifySignupEmail(e) {
     if (/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(e.target.value)) {
         outputOk(email, emailOutput, 'email');
@@ -289,15 +273,13 @@ function verifySignupEmail(e) {
         return emailSignupValid = false;
     }
 }
-// Limpia el email si esta mal
 function emailSignupClear(e){
     if (emailSignupValid == false) {
-        // e.target.value = "";
         outputClear(email, emailOutput);
     }
 }
 
-// Valida la password => Al menos 8 caracteres, formados por letras y números
+// Validates the password => At least 8 characters, consisting of letters and numbers
 function verifyPassword1(e){
     var inputValue = e.target.value
     var passwordNumbersFlag = false;
@@ -320,15 +302,13 @@ function verifyPassword1(e){
         outputError(password1, password1Output, 'password');
     }
 }
-// Limpia la contraseña si esta mal
 function password1Clear(e){
     if (inputClear(password1Valid)){
-        // e.target.value = "";
         outputClear(password1, password1Output);
     }
 }
 
-//Valida la confirmacion de la contraseña
+// Validates the password confirmation
 function verifyPassword2(e) {
     inputValue = e.target.value;
     if (inputValue === password1Copy) {
@@ -338,15 +318,13 @@ function verifyPassword2(e) {
         outputError(password2, password2Output, 'password');
     }
 }
-//Limpia la confirmacion de la contraseña si esta mal
 function password2Clear(e) {
     if (inputClear(password2Valid)){
-        // e.target.value = "";
         outputClear(password2, password2Output);
     }
 }
 
-//Valida si el string tiene numeros ignorando las letras
+// Validates if the string has numbers ignoring the letters
 function hasItNumbers(inputValue) {
     var numbers = '1234567890';
     for (var i = 0; i < inputValue.length; i++) {
@@ -357,7 +335,7 @@ function hasItNumbers(inputValue) {
     }
 }
 
-//Valida si el string tiene letras ignorando los numeros
+// Validates if the string has letters ignoring the numbers
 function hasItLetters(inputValue){
     var letters = 'abcdefghyjklmnñopqrstuvwxyz'
     for(var i=0; i<inputValue.length; i++){
@@ -368,7 +346,7 @@ function hasItLetters(inputValue){
     }
 }
 
-//Valida que el string no tenga otra cosa que no sean numeros o letras
+// Validates that the string has just numbers or letters
 function hasNumbersOrLetters(inputValue){
     var numbersAndLetters='abcdefghyjklmnñopqrstuvwxyz0123456789';
     for(var i=0; i<inputValue.length; i++){
@@ -380,7 +358,7 @@ function hasNumbersOrLetters(inputValue){
     }
 }
 
-// Verifica si el string SOLO tiene letras
+// Check if the string ONLY has letters
 function verifyLetter(value, minLength) {
     var flag = 0;
     for (var i = 0; i < value.length; i++) {
@@ -396,7 +374,7 @@ function verifyLetter(value, minLength) {
     }
 }
 
-// Verifica si el string SOLO tiene numeros
+// Check if the string ONLY has numbers
 function verifyNumber(value, minLength){
     var flag = 0;
     for (var i = 0; i < value.length; i++) {
@@ -411,32 +389,32 @@ function verifyNumber(value, minLength){
     }
 }
 
-// Limpia el input si esta incorrecto
+// Clean the input if it is incorrect
 function inputClear(flag){
     if (flag == false){
         return true
     }
 }
 
-// Muestra la caja verde y el mensaje de input valido si estan bien ingresados
+// Displays the green box and the valid input message if they are well entered
 function outputOk(inputBox, outputMessage, type){
     outputMessage.innerHTML = 'Valid ' + type;
     outputMessage.className = 'message-ok';
     inputBox.className = 'signup-input-ok';
 }
-// Muestra la caja roja y el mensaje de input invalido si estan mal ingresados
+// Displays the red box and the invalid input message if they are poorly entered
 function outputError(inputBox, outputMessage, type){
     outputMessage.innerHTML = 'Invalid ' + type;
     outputMessage.className = 'message-error';
     inputBox.className = 'signup-input-error';
 }
-// Borra el mensaje de los inputs y el color de la caja si hay que corregirlos
+// Deletes the message from the inputs and the color of the box if they need to be corrected
 function outputClear(inputBox, outputMessage){
     outputMessage.className = 'message-hidden';
     inputBox.className = 'signup-input';
 }
 
-// Verifica que no este el campo vacio
+// Verify that the empty field is not
 function outputRequired(inputBox, outputMessage){
     outputMessage.innerHTML = 'This field is required';
     outputMessage.className = 'message-error';
@@ -450,7 +428,6 @@ var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function(e) {
     e.preventDefault();
-
     if (littleName.value.length == 0){
         outputRequired(littleName, littleNameOutput);
     } else if (lastname.value.length == 0){
@@ -474,7 +451,6 @@ btn.onclick = function(e) {
     } else if (password2.value.length == 0){
         outputRequired(password2, password2Output);
     } else {
-        // modal.style.display = "block";
         modal.className = "modal-display-block";
         if (littleNameValid == false){
             modalTittle.textContent = 'Sign up failed';
@@ -569,14 +545,12 @@ btn.onclick = function(e) {
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    // modal.style.display = "none";
     modal.className = 'modal-display-none';
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        // modal.style.display = "none";
         modal.className = 'modal-display-none';
         errorsArray = [];
         modalBody.textContent = '';

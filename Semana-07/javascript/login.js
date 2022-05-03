@@ -11,7 +11,6 @@ var passwordModalText = document.getElementById('password-modal-text');
 email.addEventListener('focus', emailClear);
 email.addEventListener('blur', emailValidation);
 
-// Email validation
 function emailValidation(e) {
     if (/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(e.target.value)) {
         outputOk(email, emailOutput, 'email');
@@ -21,7 +20,7 @@ function emailValidation(e) {
         return emailFlag = false;
     }
 }
-// Email clear
+
 function emailClear(e){
     if (emailFlag == false) {
         // e.target.value = "";
@@ -66,37 +65,32 @@ function passwordValidation(e){
 
 function passwordClear(e){
     if (passwordFlag != true){
-        // e.target.value = "";
         outputClear(password, passwordOutput)
-        // password.className= 'login-input';
     }
 }
 
-// Muestra la caja verde y el mensaje de input valido si estan bien ingresados
 function outputOk(inputBox, outputMessage, type){
     outputMessage.innerHTML = 'Valid ' + type;
     outputMessage.className = 'message-ok';
     inputBox.className = 'login-input-ok';
 }
-// Muestra la caja roja y el mensaje de input invalido si estan mal ingresados
+
 function outputError(inputBox, outputMessage, type){
     outputMessage.innerHTML = 'Invalid ' + type;
     outputMessage.className = 'message-error';
     inputBox.className = 'login-input-error';
 }
-// Borra el mensaje de los inputs y el color de la caja si hay que corregirlos
+
 function outputClear(inputBox, outputMessage){
     outputMessage.className = 'message-hidden';
     inputBox.className = 'login-input';
 }
-// Verifica que no este el campo vacio
+
 function outputRequired(inputBox, outputMessage){
     outputMessage.innerHTML = 'This field is required';
     outputMessage.className = 'message-error';
     inputBox.className = 'login-input-error';
 }
-
-// //////////////MODAL//////////////////
 
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
@@ -109,7 +103,6 @@ btn.onclick = function(e) {
     } else if (password.value.length == 0) {
         outputRequired(password, passwordOutput);
     } else {
-        // modal.style.display = "block";
         modal.className = 'modal-display-block';
         if (emailFlag == false){
             modalTittle.textContent = 'Login failed';
@@ -118,9 +111,6 @@ btn.onclick = function(e) {
             modalTittle.textContent = 'Login failed';
             passwordModalText.textContent = 'Password: ' + password.value + ' not valid';
         } else {
-            // modalTittle.textContent = 'Logged in';
-            // emailModalText.textContent = 'Email: ' + email.value + ' valid';
-            // passwordModalText.textContent = 'Password: ' + password.value + ' valid';
             fetch("https://basp-m2022-api-rest-server.herokuapp.com/login".concat("?email=", email.value, "&password=", password.value))
                 .then(response => response.json())
                 .then(data => {
@@ -142,53 +132,14 @@ btn.onclick = function(e) {
 
                 }
         }
-        // fetch("https://basp-m2022-api-rest-server.herokuapp.com/login".concat("?email=", email.value, "&password=", password.value))
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         if (data.success){
-        //             // console.log('esta re bien: ',data.msg)
-        //             modalTittle.textContent = 'esta re bien: ' + data.msg;
-        //             emailModalText.textContent = 'Email: ' + email.value + ' valid';
-        //             passwordModalText.textContent = 'Password: ' + password.value + ' valid';
-        //         } else if (passwordFlag == false) {
-        //             // console.log('esta re mal: ',data.msg);
-        //             modalTittle.textContent = data.msg;
-        //             passwordModalText.textContent = 'Password: ' + password.value + ' not valid';
-        //         } else if (emailFlag == false){
-        //             modalTittle.textContent = data.msg;
-        //             emailModalText.textContent = 'Email: ' + email.value + ' not valid';
-        //         } else
-        //     })
-        //     .catch(error => {
-        //         console.log('error: ',error)
-        //     })
-
-
-        // if (emailFlag == false){
-        //     modalTittle.textContent = 'Login failed';
-        //     emailModalText.textContent = 'Email: ' + email.value + ' not valid';
-        // } else if (passwordFlag == false) {
-        //     modalTittle.textContent = 'Login failed';
-        //     passwordModalText.textContent = 'Password: ' + password.value + ' not valid';
-        // } else {
-        //     modalTittle.textContent = 'Logged in';
-        //     emailModalText.textContent = 'Email: ' + email.value + ' valid';
-        //     passwordModalText.textContent = 'Password: ' + password.value + ' valid';
-        //
-        // }
     }
 
-
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    // modal.style.display = "none";
     modal.className = "modal-display-none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        // modal.style.display = "none";
         modal.className = "modal-display-none";
     }
 }
