@@ -128,6 +128,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
+- [x] [This](https://www.figma.com/file/t27ilNO582KOmHrsdCmgFX/UI-kit-RR-(BaSP)---Julian-(Copy)?node-id=304%3A367) is the landing page we made in Figma (1st week)
 - [x] [HTML](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-02/)  (2nd week)
 - [x] [CSS](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-03/)   (3th week)
 - [x] [CSS Responsive Design](https://fefetroanes.github.io/BaSP-M2022-Etapa-1/Semana-04/) (4th week)
